@@ -1,0 +1,17 @@
+mixin footer__link(name, protoc, value)
+    .footer__link
+        .footer__link-name= name
+        -
+            let anchorType =
+                protoc == "mailto" ? "email" :
+                protoc == "https" ? "website" :
+                protoc == "tel" ? "phone" : "normal";
+        a.footer__link-a(target="_blank" href=(protoc + ":" + value) class=anchorType)= value
+
+.session-footer
+    .footer__links
+        +footer__link("Email", "mailto", body.contact.email)
+        +footer__link("GitHub", "https", body.contact.github)
+        +footer__link("WhatsApp", "tel", body.contact.phone)
+    .footer__logo
+        img.footer__image(src="lf-logo.png" alt="Logo")

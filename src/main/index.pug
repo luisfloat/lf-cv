@@ -1,0 +1,22 @@
+include assets/ds/index
+
+doctype html
+html
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title= head.title
+        link(rel="stylesheet", href="style.css")
+    body
+        .body
+            .main
+                include components/header/index
+                include components/about/index
+                include components/xp/index
+            .sidebar
+                include components/details/index
+                include components/skills/index
+                include components/edu/index
+                include components/hobby/index
+        .footer
+            include components/footer/index

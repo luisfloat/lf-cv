@@ -1,0 +1,8 @@
+.session-aside
+    h2.h--2= body.details
+    nav: ul.details__items
+        li: a.address= body.contact.address
+        li: a.person-name= body.contact.name
+        li: a.phone(href="tel:" + body.contact.phone)= body.contact.phone
+        li: a.email(href="mailto:" + body.contact.email)= body.contact.email
+        li: a.website(target="_blank" href="https:" + body.contact.github)= body.contact.github

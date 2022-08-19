@@ -1,0 +1,8 @@
+.session-main
+    h2.h--2= body.experience.title
+    each item in body.experience.items
+        .xp__header
+            h3.h--3
+                a.xp__name(href=item.link target="_blank")= item.name
+                span.xp__skills= item.skills
+        p.p.xp__content= item.content
