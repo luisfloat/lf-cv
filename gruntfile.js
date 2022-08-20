@@ -57,7 +57,7 @@ module.exports = function(grunt) {
         watch: {
             scripts: {
                 files: [ config.src, 'src/main/**/*.styl' ],
-                tasks: [ 'main:pug:compile', 'main:styl:compile' ],
+                tasks: [ 'main:compile:pug', 'main:compile:styl' ],
                 options: {
                     spawn: false,
                 },
@@ -69,10 +69,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-stylus');
   
-    grunt.registerTask('default', [ 'watch' ]);
-    grunt.registerTask('main:pug:compile', [ 'pug' ]);
-    grunt.registerTask('main:styl:compile', [ 'stylus' ]);
-    grunt.registerTask('main:watch', [ 'watch' ]);
+    grunt.registerTask('dev', [ 'watch' ]);
+    grunt.registerTask('main:compile:pug', [ 'pug' ]);
+    grunt.registerTask('main:compile:styl', [ 'stylus' ]);
 
     grunt.registerTask('main:build', 'Render PDF', renderPdf);
 };
