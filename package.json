@@ -4,7 +4,8 @@
   "description": "Luis Float CV",
   "main": "index.js",
   "scripts": {
-    "dev": "grunt"
+    "dev": "grunt",
+    "build": "grunt main:build"
   },
   "keywords": [
     "cv",
@@ -23,6 +24,7 @@
     "less": "^4.1.3",
     "lfds-corallia": "github:luisfloat/lfds-corallia",
     "pug": "^3.0.2",
+    "puppeteer": "^16.1.1",
     "spongia-css": "github:inforgdev/spongia-css"
   }
 }
