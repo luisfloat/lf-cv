@@ -1,14 +1,4 @@
-function xp(role, company, employmentType, date, link, description, skills) {
-    return {
-        role,
-        company,
-        employmentType,
-        date,
-        link,
-        description,
-        skills,
-    };
-}
+const { xp } = require("./lib.js");
 
 module.exports = {
     head: {
