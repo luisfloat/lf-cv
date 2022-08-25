@@ -1,9 +1,12 @@
-function xp(name, link, skills, content) {
+function xp(role, company, employmentType, date, link, description, skills) {
     return {
-        name: name,
-        link: link,
-        skills: skills,
-        content: content,
+        role,
+        company,
+        employmentType,
+        date,
+        link,
+        description,
+        skills,
     };
 }
 
@@ -51,10 +54,11 @@ module.exports = {
         experience: {
             title: "Experience",
             items: [
-                xp("OctopoJS, @inforgdev", "https://inforg.dev/octopo-js", " — NodeJS, JavaScript, RollupJS", "Current - CSS preprocessor language stringifier"),
-                xp("CoralliaJS, @inforgdev", "https://github.com/inforgdev/corallia-js", " — NodeJS, JavaScript, RollupJS", "Current - Design system token stringifier"),
-                xp("LuisFloat, @luisfloat", "https://github.com/luisfloat/luisfloat", " — NodeJS, PugJS, Pug, Markdown", "Current - Static personal README.md generator"),
-                xp("SpongiaCSS, @inforgdev", "https://inforg.dev/spongia-css", " — JavaScript, Grunt, SCSS", "Current - Modern CSS resetter/normalizer"),
+                xp("Software Engineer", "Inforg Dev", "Self-employed", "Mar 2022 - Present", "https://inforg.dev", undefined, "HTML | CSS | JS | NodeJS | ViteJS"),
+
+                xp("Web Developer", "Luis Float", "Freelance", "Jan 2021 - Present", "https://luisfloat.com", undefined, "HTML | CSS | JS | WordPress"),
+
+                xp("Software Developer", "Luis Float (me)", "Self-employed", "Jan 2020 - Present", "https://luisfloat.com", undefined, "HTML | CSS | JS | PugJS | Grunt | Markdown | NodeJS"),
             ],
         },
     },

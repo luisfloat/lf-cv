@@ -1,18 +1,48 @@
-.xp__header {
-        
+.xp-items > .xp__header:not(:first-child) {
+    margin-top: 10pt;
 }
 
-.xp__name {
-    font-size: 12pt;
+.xp__role {
+    font-size: 10pt;
     color: color-azure-4;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .xp__skills {
     
 }
 
-.xp__content {
+.xp__date {
+    font-weight: 400;
+    font-size: 9pt;
+    color: color-gray-4;
+}
+
+.xp__company {
+    color: color-gray-3;
+    font-weight: 400;
+    font-size: 9pt;
+    text-decoration: none;
+}
+
+.xp__employment_type {
+    font-weight: 400;
+    font-size: 9pt;
+    color: color-gray-3;
+    margin-left: 3ch;
+    position: relative;
+
+    &::before {
+        content: "-";
+        top: 0;
+        left: -2ch;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+    }
+}
+
+.xp__description {
     margin-top: 6pt;
     margin-bottom: 10pt;
 }
