@@ -17,14 +17,16 @@ const vlang = (prop, lang) => prop.replaceAll("$lang", lang);
 async function renderPdf() {
     let done = this.async();
 
-    const browser = await puppeteer.launch();
-    const page = await browser.newPage();
-    await page.goto(vlang(pdfConfig.src, "en-us"), {
-        waitUntil: 'networkidle2',
-    });
-    await page.pdf({ path: vlang(pdfConfig.dist, "en-us"), format: "a4" });
+    for(let lang of config.langs) {
+        const browser = await puppeteer.launch();
+        const page = await browser.newPage();
+        await page.goto(vlang(pdfConfig.src, lang), {
+            waitUntil: 'networkidle2',
+        });
+        await page.pdf({ path: vlang(pdfConfig.dist, lang), format: "a4" });
 
-    await browser.close();
+        await browser.close();
+    }
 
     done();
 }
