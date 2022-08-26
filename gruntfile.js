@@ -1,15 +1,16 @@
 //gruntfile.js
 const puppeteer = require('puppeteer');
 
-const pdfConfig = {
-    src: "file://" + __dirname + "/dist/Luis Float CV ($lang).html",
-    dist: "dist/Luis Float CV ($lang).pdf",
-};
-
 var config = {
     langs: [ "en-us", "pt-br" ],
-    src: 'src/main/**/*.pug',
-    dist: 'dist/Luis Float CV ($lang).html',
+    html: {
+        src: 'src/main/**/*.pug',
+        dist: 'dist/Luis Float CV ($lang).html',
+    },
+    pdf: {
+        src: "file://" + __dirname + "/dist/Luis Float CV ($lang).html",
+        dist: "dist/Luis Float CV ($lang).pdf",
+    },
 };
 
 const vlang = (prop, lang) => prop.replaceAll("$lang", lang);
@@ -20,10 +21,10 @@ async function renderPdf() {
     for(let lang of config.langs) {
         const browser = await puppeteer.launch();
         const page = await browser.newPage();
-        await page.goto(vlang(pdfConfig.src, lang), {
+        await page.goto(vlang(config.pdf.src, lang), {
             waitUntil: 'networkidle2',
         });
-        await page.pdf({ path: vlang(pdfConfig.dist, lang), format: "a4" });
+        await page.pdf({ path: vlang(config.pdf.dist, lang), format: "a4" });
 
         await browser.close();
     }
@@ -36,7 +37,7 @@ function renderHtml() {
 
     for(let lang of config.langs) {
         const files = {};
-        files[vlang(config.dist, lang)] = [ 'src/main/index.pug' ];
+        files[vlang(config.html.dist, lang)] = [ 'src/main/index.pug' ];
 
         pugConfig[lang] = {
             options: {
@@ -66,7 +67,7 @@ module.exports = function(grunt) {
         },
         watch: {
             scripts: {
-                files: [ config.src, 'src/main/**/*.styl' ],
+                files: [ config.html.src, 'src/main/**/*.styl' ],
                 tasks: [ 'main:compile:pug', 'main:compile:styl' ],
                 options: {
                     spawn: false,
