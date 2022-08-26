@@ -1,4 +1,4 @@
-const { xp } = require("./lib.js");
+const { xp } = require("./factory.js");
 
 module.exports = {
     head: {
