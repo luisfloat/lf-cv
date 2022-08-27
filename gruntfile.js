@@ -66,9 +66,16 @@ module.exports = function(grunt) {
             },
         },
         watch: {
-            scripts: {
-                files: [ config.html.src, 'src/main/**/*.styl' ],
-                tasks: [ 'main:compile:pug', 'main:compile:styl' ],
+            html: {
+                files: [ config.html.src ],
+                tasks: [ 'main:compile:pug' ],
+                options: {
+                    spawn: false,
+                },
+            },
+            css: {
+                files: [ 'src/main/**/*.styl' ],
+                tasks: [ 'main:compile:styl' ],
                 options: {
                     spawn: false,
                 },
