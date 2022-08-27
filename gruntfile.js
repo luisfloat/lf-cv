@@ -29,24 +29,6 @@ var config = {
 
 const vlang = (prop, lang) => prop.replaceAll("$lang", lang);
 
-async function renderPdf() {
-    let done = this.async();
-    fs.mkdirSync(path.dirname(config.pdf.dist), { recursive: true });
-
-    for(let lang of config.langs) {
-        const browser = await puppeteer.launch();
-        const page = await browser.newPage();
-        await page.goto(vlang(config.pdf.src, lang), {
-            waitUntil: 'networkidle2',
-        });
-        await page.pdf({ path: vlang(config.pdf.dist, lang), format: "a4" });
-
-        await browser.close();
-    }
-
-    done();
-}
-
 function renderHtml() {
     const langConfig = (lang) => ({
         options: {
@@ -92,6 +74,24 @@ function copyImg() {
     };
 }
 
+async function printPdf() {
+    let done = this.async();
+    fs.mkdirSync(path.dirname(config.pdf.dist), { recursive: true });
+
+    for(let lang of config.langs) {
+        const browser = await puppeteer.launch();
+        const page = await browser.newPage();
+        await page.goto(vlang(config.pdf.src, lang), {
+            waitUntil: 'networkidle2',
+        });
+        await page.pdf({ path: vlang(config.pdf.dist, lang), format: "a4" });
+
+        await browser.close();
+    }
+
+    done();
+}
+
 const watchConfig = (file, task) => { return {
     files: [ file ],
     tasks: [ task ],
@@ -122,5 +122,5 @@ module.exports = function(grunt) {
     grunt.registerTask('main:compile:styl', [ 'stylus' ]);
     grunt.registerTask('main:copy:img', [ 'copy' ]);
 
-    grunt.registerTask('main:build', 'Render PDF', renderPdf);
+    grunt.registerTask('main:print:pdf', 'Print PDF from HTMLs', printPdf);
 };
