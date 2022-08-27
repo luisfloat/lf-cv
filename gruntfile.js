@@ -13,6 +13,11 @@ var config = {
         src: "file://" + __dirname + "/dist/Luis Float CV ($lang).html",
         dist: "dist/Luis Float CV ($lang).pdf",
     },
+    img: {
+        cwd: 'src/main/assets/brand/',
+        src: '**/*.png',
+        dist: 'dist/',
+    },
 };
 
 const vlang = (prop, lang) => prop.replaceAll("$lang", lang);
@@ -75,19 +80,34 @@ module.exports = function(grunt) {
                 },
             },
         },
+        copy: {
+            img: {
+                files: [
+                    {
+                        expand: true,
+                        cwd: config.img.cwd,
+                        src: [ config.img.src ],
+                        dest: config.img.dist,
+                    },
+                ],
+            },
+        },
         watch: {
             html: watchConfig(config.html.src, 'main:compile:pug'),
             css: watchConfig('src/main/**/*.styl', 'main:compile:styl'),
+            img: watchConfig(config.img.src, 'main:copy:img'),
         },
     });
   
     grunt.loadNpmTasks('grunt-contrib-pug');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-stylus');
+    grunt.loadNpmTasks('grunt-contrib-copy');
   
     grunt.registerTask('dev', [ 'watch' ]);
     grunt.registerTask('main:compile:pug', [ 'pug' ]);
     grunt.registerTask('main:compile:styl', [ 'stylus' ]);
+    grunt.registerTask('main:copy:img', [ 'copy' ]);
 
     grunt.registerTask('main:build', 'Render PDF', renderPdf);
 };
