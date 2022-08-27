@@ -52,6 +52,14 @@ function renderHtml() {
     return pugConfig;
 }
 
+const watchConfig = (file, task) => { return {
+    files: [ config.html.src ],
+    tasks: [ 'main:compile:pug' ],
+    options: {
+        spawn: false,
+    },
+}}; 
+
 module.exports = function(grunt) {
     grunt.initConfig({
         pug: renderHtml(),
@@ -68,20 +76,8 @@ module.exports = function(grunt) {
             },
         },
         watch: {
-            html: {
-                files: [ config.html.src ],
-                tasks: [ 'main:compile:pug' ],
-                options: {
-                    spawn: false,
-                },
-            },
-            css: {
-                files: [ 'src/main/**/*.styl' ],
-                tasks: [ 'main:compile:styl' ],
-                options: {
-                    spawn: false,
-                },
-            },
+            html: watchConfig(config.html.src, 'main:compile:pug'),
+            css: watchConfig('src/main/**/*.styl', 'main:compile:styl'),
         },
     });
   
