@@ -9,6 +9,11 @@ var config = {
         src: 'src/main/**/*.pug',
         dist: 'dist/Luis Float CV ($lang).html',
     },
+    css: {
+        src: 'src/main/**/*.styl',
+        srcIndex: 'src/main/index.styl',
+        dist: 'dist/style.css',
+    },
     pdf: {
         src: "file://" + __dirname + "/dist/Luis Float CV ($lang).html",
         dist: "dist/Luis Float CV ($lang).pdf",
@@ -66,6 +71,9 @@ const watchConfig = (file, task) => { return {
 }}; 
 
 module.exports = function(grunt) {
+    const cssDistFiles = {};
+    cssDistFiles[config.css.dist] = [ config.css.srcIndex ];
+
     grunt.initConfig({
         pug: renderHtml(),
         stylus: {
@@ -75,9 +83,7 @@ module.exports = function(grunt) {
                     relativeDest: '',
                     "include css": true,
                 },
-                files: {
-                    'dist/style.css': [ 'src/main/index.styl' ],
-                },
+                files: cssDistFiles,
             },
         },
         copy: {
@@ -94,7 +100,7 @@ module.exports = function(grunt) {
         },
         watch: {
             html: watchConfig(config.html.src, 'main:compile:pug'),
-            css: watchConfig('src/main/**/*.styl', 'main:compile:styl'),
+            css: watchConfig(config.css.src, 'main:compile:styl'),
             img: watchConfig(config.img.src, 'main:copy:img'),
         },
     });
