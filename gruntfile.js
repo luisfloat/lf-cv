@@ -62,6 +62,22 @@ function renderHtml() {
     return pugConfig;
 }
 
+function renderCss() {
+    const files = {};
+    files[config.css.dist] = [ config.css.srcIndex ];
+
+    return {
+        compile: {
+            options: {
+                paths: [ '' ],
+                relativeDest: '',
+                "include css": true,
+            },
+            files,
+        },
+    };
+}
+
 const watchConfig = (file, task) => { return {
     files: [ file ],
     tasks: [ task ],
@@ -71,21 +87,9 @@ const watchConfig = (file, task) => { return {
 }}; 
 
 module.exports = function(grunt) {
-    const cssDistFiles = {};
-    cssDistFiles[config.css.dist] = [ config.css.srcIndex ];
-
     grunt.initConfig({
         pug: renderHtml(),
-        stylus: {
-            compile: {
-                options: {
-                    paths: [ '' ],
-                    relativeDest: '',
-                    "include css": true,
-                },
-                files: cssDistFiles,
-            },
-        },
+        stylus: renderCss(),
         copy: {
             img: {
                 files: [
