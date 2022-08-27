@@ -45,20 +45,18 @@ async function renderPdf() {
 }
 
 function renderHtml() {
-    const pugConfig = {};
-
-    for(let lang of config.langs) {
-        pugConfig[lang] = {
-            options: {
-                data: (dest, src) => require(vlang(config.content, lang))
-            },
-            files: {
-                [vlang(config.html.dist, lang)]: [ config.html.srcIndex ],
-            },
-        };
-    }
-
-    return pugConfig;
+    const langConfig = (lang) => ({
+        options: {
+            data: (dest, src) => require(vlang(config.content, lang))
+        },
+        files: {
+            [vlang(config.html.dist, lang)]: [ config.html.srcIndex ],
+        },
+    });
+    return config.langs.reduce(
+        (obj, lang) => ({ ...obj, [lang]: langConfig(lang)}),
+        {}
+    );
 }
 
 function renderCss() {
