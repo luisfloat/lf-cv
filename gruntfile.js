@@ -48,14 +48,13 @@ function renderHtml() {
     const pugConfig = {};
 
     for(let lang of config.langs) {
-        const files = {};
-        files[vlang(config.html.dist, lang)] = [ config.html.srcIndex ];
-
         pugConfig[lang] = {
             options: {
                 data: (dest, src) => require(vlang(config.content, lang))
             },
-            files,
+            files: {
+                [vlang(config.html.dist, lang)]: [ config.html.srcIndex ],
+            },
         };
     }
 
@@ -63,9 +62,6 @@ function renderHtml() {
 }
 
 function renderCss() {
-    const files = {};
-    files[config.css.dist] = [ config.css.srcIndex ];
-
     return {
         compile: {
             options: {
@@ -73,7 +69,9 @@ function renderCss() {
                 relativeDest: '',
                 "include css": true,
             },
-            files,
+            files: {
+                [config.css.dist]: [ config.css.srcIndex ],
+            },
         },
     };
 }
