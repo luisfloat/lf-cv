@@ -117,7 +117,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-stylus');
     grunt.loadNpmTasks('grunt-contrib-copy');
   
-    grunt.registerTask('dev', [ 'watch' ]);
+    grunt.registerTask('main:dev', [ 'watch' ]);
     grunt.registerTask('main:compile:pug', [ 'pug' ]);
     grunt.registerTask('main:compile:styl', [ 'stylus' ]);
     grunt.registerTask('main:copy:img', [ 'copy' ]);

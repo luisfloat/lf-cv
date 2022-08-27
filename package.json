@@ -4,7 +4,7 @@
   "description": "Luis Float CV",
   "main": "index.js",
   "scripts": {
-    "main:dev": "grunt dev",
+    "main:dev": "grunt main:dev",
     "main:build": "grunt main:build"
   },
   "keywords": [
