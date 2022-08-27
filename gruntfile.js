@@ -12,7 +12,7 @@ var config = {
     css: {
         src: 'src/main/**/*.styl',
         srcIndex: 'src/main/index.styl',
-        dist: 'dist/style.css',
+        dist: 'dist/assets/style.css',
     },
     pdf: {
         src: "file://" + __dirname + "/dist/Luis Float CV ($lang).html",
