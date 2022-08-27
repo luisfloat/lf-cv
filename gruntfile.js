@@ -121,6 +121,7 @@ module.exports = function(grunt) {
     grunt.registerTask('main:compile:pug', [ 'pug' ]);
     grunt.registerTask('main:compile:styl', [ 'stylus' ]);
     grunt.registerTask('main:copy:img', [ 'copy' ]);
+    grunt.registerTask('main:build', [ 'pug', 'stylus', 'copy' ]);
 
     grunt.registerTask('main:print:pdf', 'Print PDF from HTMLs', printPdf);
 };
