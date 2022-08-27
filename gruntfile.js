@@ -1,5 +1,7 @@
 //gruntfile.js
 const puppeteer = require('puppeteer');
+const path = require('path');
+const fs = require('fs');
 
 var config = {
     langs: [ "en-us", "pt-br" ],
@@ -16,7 +18,7 @@ var config = {
     },
     pdf: {
         src: "file://" + __dirname + "/dist/Luis Float CV ($lang).html",
-        dist: "dist/Luis Float CV ($lang).pdf",
+        dist: "dist/bin/Luis Float CV ($lang).pdf",
     },
     img: {
         cwd: 'src/main/assets/brand/',
@@ -29,6 +31,7 @@ const vlang = (prop, lang) => prop.replaceAll("$lang", lang);
 
 async function renderPdf() {
     let done = this.async();
+    fs.mkdirSync(path.dirname(config.pdf.dist), { recursive: true });
 
     for(let lang of config.langs) {
         const browser = await puppeteer.launch();
