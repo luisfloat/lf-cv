@@ -78,6 +78,21 @@ function renderCss() {
     };
 }
 
+function copyImg() {
+    return {
+        img: {
+            files: [
+                {
+                    expand: true,
+                    cwd: config.img.cwd,
+                    src: [ config.img.src ],
+                    dest: config.img.dist,
+                },
+            ],
+        },
+    };
+}
+
 const watchConfig = (file, task) => { return {
     files: [ file ],
     tasks: [ task ],
@@ -90,18 +105,7 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pug: renderHtml(),
         stylus: renderCss(),
-        copy: {
-            img: {
-                files: [
-                    {
-                        expand: true,
-                        cwd: config.img.cwd,
-                        src: [ config.img.src ],
-                        dest: config.img.dist,
-                    },
-                ],
-            },
-        },
+        copy: copyImg(),
         watch: {
             html: watchConfig(config.html.src, 'main:compile:pug'),
             css: watchConfig(config.css.src, 'main:compile:styl'),
