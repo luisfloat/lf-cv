@@ -63,8 +63,8 @@ function renderHtml() {
 }
 
 const watchConfig = (file, task) => { return {
-    files: [ config.html.src ],
-    tasks: [ 'main:compile:pug' ],
+    files: [ file ],
+    tasks: [ task ],
     options: {
         spawn: false,
     },
