@@ -4,6 +4,7 @@ const puppeteer = require('puppeteer');
 var config = {
     langs: [ "en-us", "pt-br" ],
     html: {
+        srcIndex: 'src/main/index.pug',
         src: 'src/main/**/*.pug',
         dist: 'dist/Luis Float CV ($lang).html',
     },
@@ -37,7 +38,7 @@ function renderHtml() {
 
     for(let lang of config.langs) {
         const files = {};
-        files[vlang(config.html.dist, lang)] = [ 'src/main/index.pug' ];
+        files[vlang(config.html.dist, lang)] = [ config.html.srcIndex ];
 
         pugConfig[lang] = {
             options: {
