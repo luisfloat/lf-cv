@@ -3,6 +3,7 @@ const puppeteer = require('puppeteer');
 
 var config = {
     langs: [ "en-us", "pt-br" ],
+    content: "./src/main/content/$lang.js",
     html: {
         srcIndex: 'src/main/index.pug',
         src: 'src/main/**/*.pug',
@@ -42,7 +43,7 @@ function renderHtml() {
 
         pugConfig[lang] = {
             options: {
-                data: (dest, src) => require(`./src/main/content/${lang}.js`),
+                data: (dest, src) => require(vlang(config.content, lang))
             },
             files,
         };
