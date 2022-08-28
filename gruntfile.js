@@ -5,8 +5,8 @@ const fs = require('fs');
 const pugApi = require('pug');
 
 var config = {
-    langs: [ "en-us", "pt-br" ],
     content: {
+        langs: [ "en-us", "pt-br" ],
         template: "./src/main/content/$lang.js",
         src: 'src/main/content/*.js',
     },
@@ -20,21 +20,21 @@ var config = {
         srcIndex: 'src/main/index.styl',
         dist: 'dist/assets/style.css',
     },
-    pdf: {
-        src: "file://" + __dirname + "/dist/Luis Float CV ($lang).html",
-        dist: "dist/bin/Luis Float CV ($lang).pdf",
-    },
     img: {
         cwd: 'src/main/assets/img/',
         src: '**/*.png',
         dist: 'dist/assets/img/',
+    },
+    pdf: {
+        src: "file://" + __dirname + "/dist/Luis Float CV ($lang).html",
+        dist: "dist/bin/Luis Float CV ($lang).pdf",
     },
 };
 
 const vlang = (prop, lang) => prop.replaceAll("$lang", lang);
 
 function renderHtml() {
-    config.langs.forEach((lang) => {
+    config.content.langs.forEach((lang) => {
         const pugDistPath = vlang(config.html.dist, lang);
 
         const compilePug = pugApi.compileFile(config.html.srcIndex);
@@ -85,7 +85,7 @@ async function printPdf() {
     let done = this.async();
     fs.mkdirSync(path.dirname(config.pdf.dist), { recursive: true });
 
-    for(let lang of config.langs) {
+    for(let lang of config.content.langs) {
         const browser = await puppeteer.launch();
         const page = await browser.newPage();
         await page.goto(vlang(config.pdf.src, lang), {
