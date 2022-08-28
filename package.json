@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "main:dev": "grunt main:dev",
-    "main:build": "grunt main:build"
+    "main:build": "grunt main:build",
+    "main:clean": "grunt main:clean"
   },
   "keywords": [
     "cv",

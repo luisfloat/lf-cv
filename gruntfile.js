@@ -27,7 +27,7 @@ var config = {
     },
     pdf: {
         src: "file://" + __dirname + "/dist/Luis Float CV ($lang).html",
-        dist: "dist/bin/Luis Float CV ($lang).pdf",
+        dist: "dist/print/Luis Float CV ($lang).pdf",
     },
 };
 
@@ -99,6 +99,11 @@ async function printPdf() {
     done();
 }
 
+function clean() {
+    const distPath = path.dirname(config.html.dist);
+    fs.rmSync(distPath, { recursive: true, force: true });
+}
+
 const watchConfig = (file, task) => { return {
     files: [ file ],
     tasks: [ task ],
@@ -129,6 +134,7 @@ module.exports = function(grunt) {
   
     grunt.registerTask('main:dev', [ 'watch' ]);
     grunt.registerTask('main:build', [ 'main:compile:html', 'stylus', 'copy' ]);
+    grunt.registerTask('main:clean', 'Clean dist folder', clean);
 
     grunt.registerTask('main:print:pdf', 'Print PDF from HTMLs', printPdf);
 };
