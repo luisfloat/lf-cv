@@ -2,10 +2,14 @@
 const puppeteer = require('puppeteer');
 const path = require('path');
 const fs = require('fs');
+const pugApi = require('pug');
 
 var config = {
     langs: [ "en-us", "pt-br" ],
-    content: "./src/main/content/$lang.js",
+    content: {
+        template: "./src/main/content/$lang.js",
+        src: 'src/main/content/*.js',
+    },
     html: {
         srcIndex: 'src/main/index.pug',
         src: 'src/main/**/*.pug',
@@ -30,18 +34,21 @@ var config = {
 const vlang = (prop, lang) => prop.replaceAll("$lang", lang);
 
 function renderHtml() {
-    const langConfig = (lang) => ({
-        options: {
-            data: (dest, src) => require(vlang(config.content, lang))
-        },
-        files: {
-            [vlang(config.html.dist, lang)]: [ config.html.srcIndex ],
-        },
+    config.langs.forEach((lang) => {
+        const pugDistPath = vlang(config.html.dist, lang);
+
+        const compilePug = pugApi.compileFile(config.html.srcIndex);
+        const langContentJs = fs.readFileSync(vlang(config.content.template, lang)) + "";
+        
+        let langContent;
+        try {
+            langContent = eval(langContentJs);
+        } catch (e) {
+            console.log(e);
+        }
+
+        fs.writeFileSync(pugDistPath, compilePug({ ...langContent }));
     });
-    return config.langs.reduce(
-        (obj, lang) => ({ ...obj, [lang]: langConfig(lang)}),
-        {}
-    );
 }
 
 function renderCss() {
@@ -103,13 +110,13 @@ const watchConfig = (file, task) => { return {
 
 module.exports = function(grunt) {
     grunt.initConfig({
-        pug: renderHtml(),
         stylus: renderCss(),
         copy: copyImg(),
         watch: {
-            html: watchConfig(config.html.src, 'pug'),
+            html: watchConfig(config.html.src, 'main:compile:html'),
             css: watchConfig(config.css.src, 'stylus'),
             img: watchConfig(config.img.src, 'copy'),
+            content: watchConfig(config.content.src, 'main:compile:html'),
         },
     });
   
@@ -117,9 +124,11 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-stylus');
     grunt.loadNpmTasks('grunt-contrib-copy');
+
+    grunt.registerTask('main:compile:html', 'Compile Pug to HTMLs', renderHtml);
   
     grunt.registerTask('main:dev', [ 'watch' ]);
-    grunt.registerTask('main:build', [ 'pug', 'stylus', 'copy' ]);
+    grunt.registerTask('main:build', [ 'main:compile:html', 'stylus', 'copy' ]);
 
     grunt.registerTask('main:print:pdf', 'Print PDF from HTMLs', printPdf);
 };

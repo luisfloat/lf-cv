@@ -1,4 +1,4 @@
-const { xp } = require("./factory.js");
+const { xp } = require("./src/main/content/factory.js");
 
 module.exports = {
     head: {
@@ -47,7 +47,7 @@ module.exports = {
                 xp("Software Engineer", "Inforg Dev", "Self-employed", "Mar 2022 - Present", "https://inforg.dev", undefined, "HTML | CSS | JS | NodeJS | ViteJS"),
 
                 xp("Web Developer", "Luis Float", "Freelance", "Jan 2021 - Present", "https://luisfloat.com", undefined, "HTML | CSS | JS | WordPress"),
-
+                
                 xp("Software Developer", "Luis Float (me)", "Self-employed", "Jan 2020 - Present", "https://luisfloat.com", undefined, "HTML | CSS | JS | PugJS | Grunt | Markdown | NodeJS"),
             ],
         },
