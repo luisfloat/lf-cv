@@ -97,6 +97,7 @@ const watchConfig = (file, task) => { return {
     tasks: [ task ],
     options: {
         spawn: false,
+        livereload: true,
     },
 }}; 
 
