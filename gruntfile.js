@@ -106,9 +106,9 @@ module.exports = function(grunt) {
         stylus: renderCss(),
         copy: copyImg(),
         watch: {
-            html: watchConfig(config.html.src, 'main:compile:pug'),
-            css: watchConfig(config.css.src, 'main:compile:styl'),
-            img: watchConfig(config.img.src, 'main:copy:img'),
+            html: watchConfig(config.html.src, 'pug'),
+            css: watchConfig(config.css.src, 'stylus'),
+            img: watchConfig(config.img.src, 'copy'),
         },
     });
   
@@ -118,9 +118,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
   
     grunt.registerTask('main:dev', [ 'watch' ]);
-    grunt.registerTask('main:compile:pug', [ 'pug' ]);
-    grunt.registerTask('main:compile:styl', [ 'stylus' ]);
-    grunt.registerTask('main:copy:img', [ 'copy' ]);
     grunt.registerTask('main:build', [ 'pug', 'stylus', 'copy' ]);
 
     grunt.registerTask('main:print:pdf', 'Print PDF from HTMLs', printPdf);
