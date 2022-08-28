@@ -5,27 +5,30 @@ transparent-grid(color-1 = color-black, color-2 = color-gray-1-5) {
     background-repeat: repeat;
 }
 
+size-a4() {
+    width: 21cm !important; /* 595px */
+    height: 29.7cm !important; /* 842px */
+}
+
 * {
     font-family: 'Roboto Mono', monospace;
 }
 
 html {
+    size-a4();
+
     background-color: color-black;
     transparent-grid();
-
-    width: 21cm; /* 595px */
-    height: 29.7cm; /* 842px */
 
     margin: auto;
 }
 
 body {
-    width: 21cm; /* 595px */
-    height: 29.7cm !important; /* 842px */
+    size-a4();
+    
     background: color-white;
-
+    
     line-height: 1.3;
-
     padding: 2.54cm;
 }
 
