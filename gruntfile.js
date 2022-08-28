@@ -21,9 +21,9 @@ var config = {
         dist: "dist/bin/Luis Float CV ($lang).pdf",
     },
     img: {
-        cwd: 'src/main/assets/brand/',
+        cwd: 'src/main/assets/img/',
         src: '**/*.png',
-        dist: 'dist/',
+        dist: 'dist/assets/img/',
     },
 };
 
