@@ -36,6 +36,7 @@ const vlang = (prop, lang) => prop.replaceAll("$lang", lang);
 function renderHtml() {
     config.content.langs.forEach((lang) => {
         const pugDistPath = vlang(config.html.dist, lang);
+        fs.mkdirSync(path.dirname(config.html.dist), { recursive: true, force: true });
 
         const compilePug = pugApi.compileFile(config.html.srcIndex);
         const langContentJs = fs.readFileSync(vlang(config.content.template, lang)) + "";
