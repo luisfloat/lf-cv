@@ -1,6 +1,6 @@
 {
   "name": "lf-cv",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Luis Float CV",
   "main": "index.js",
   "scripts": {
