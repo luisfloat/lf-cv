@@ -1,7 +1,7 @@
 {
   "name": "lf-cv",
   "version": "0.4.2",
-  "description": "Luis Float CV",
+  "description": "The curriculum generator for my personal curricula.",
   "main": "index.js",
   "scripts": {
     "main:dev": "grunt main:dev",

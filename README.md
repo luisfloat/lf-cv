@@ -2,7 +2,7 @@
 
 ## About
 
-It's the project for my curriculum.
+It's the curriculum generator for my personal curricula.
 
 * 🌎 **International** - Support multiple language, currently English and Brazilian Portuguese;
 * 🌐 **Webpage support** - Generate HTML and assets for browser view;
