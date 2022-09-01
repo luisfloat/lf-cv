@@ -20,7 +20,7 @@ module.exports = {
         skills: {
             title: "Skills",
             sep: " | ",
-            hard1: [ "JavaScript", "NodeJS", "TypeScript", "HTML", "CSS", "VueJS", "Responsive Design", "Web Optimization", "Git", "Linux Basics" ],
+            hard1: [ "JavaScript", "Node.js", "TypeScript", "HTML", "CSS", "Vue.js", "Responsive Design", "Web Optimization", "Git", "Linux Basics" ],
             hard2: [ "Computer Science Basics", "Design Pattern Basics" ],
             soft1: [ "Problem solving", "Communication", "Adaptability", "Creativity", "Speed learning" ],
             soft2: [ "English", "Portuguese" ],
@@ -44,11 +44,11 @@ module.exports = {
         experience: {
             title: "Experience",
             items: [
-                xp("Software Engineer", "Inforg Dev", "Self-employed", "Mar 2022 - Present", "https://inforg.dev", undefined, "HTML | CSS | JS | NodeJS | ViteJS"),
+                xp("Software Engineer", "Inforg Dev", "Self-employed", "Mar 2022 - Present", "https://inforg.dev", "Engineering experimental software to help other software developers, both systems and applications.", "Node.js | JavaScript | Git | HTML | CSS"),
 
-                xp("Web Developer", "Luis Float", "Freelance", "Jan 2021 - Present", "https://luisfloat.com", undefined, "HTML | CSS | JS | WordPress"),
+                xp("Web Developer", "Luis Float", "Freelance", "Jan 2021 - Present", "https://luisfloat.com", "Installation, maintenance, configuration and creation of websites such as landing page and/or e-commerce.", "HTML | CSS | MySQL | WordPress"),
                 
-                xp("Software Developer", "Luis Float (me)", "Self-employed", "Jan 2020 - Present", "https://luisfloat.com", undefined, "HTML | CSS | JS | PugJS | Grunt | Markdown | NodeJS"),
+                xp("Software Developer", "Luis Float (me)", "Self-employed", "Jan 2020 - Present", "https://luisfloat.com", "Development of personal projects, such as my curriculum generator, my readme, my portfolio, etc.", "Node.js | JavaScript | Grunt | Git | HTML | CSS"),
             ],
         },
     },
