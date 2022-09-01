@@ -4,7 +4,7 @@
 
 It's the curriculum generator for my personal curricula.
 
-* 🌎 **International** - Support multiple language, currently English and Brazilian Portuguese;
+* 🌎 **International** - Support multiple languages, currently English and Brazilian Portuguese;
 * 🌐 **Webpage support** - Generate HTML and assets for browser view;
 * 🔄 **Live-reload** - Automatically refresh web browser view on changes.
 
