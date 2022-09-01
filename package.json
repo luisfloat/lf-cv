@@ -6,7 +6,8 @@
   "scripts": {
     "main:dev": "grunt main:dev",
     "main:build": "grunt main:build",
-    "main:clean": "grunt main:clean"
+    "main:clean": "grunt main:clean",
+    "main:print:pdf": "grunt main:print:pdf"
   },
   "keywords": [
     "cv",
