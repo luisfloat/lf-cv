@@ -86,16 +86,17 @@ async function printPdf() {
     let done = this.async();
     fs.mkdirSync(path.dirname(config.pdf.dist), { recursive: true });
 
+    const browser = await puppeteer.launch();
+    
     for(let lang of config.content.langs) {
-        const browser = await puppeteer.launch();
         const page = await browser.newPage();
         await page.goto(vlang(config.pdf.src, lang), {
             waitUntil: 'networkidle2',
         });
         await page.pdf({ path: vlang(config.pdf.dist, lang), format: "a4" });
-
-        await browser.close();
     }
+
+    await browser.close();
 
     done();
 }
