@@ -44,11 +44,11 @@ module.exports = {
         experience: {
             title: "Experiência",
             items: [
-                xp("Engenheiro de Software", "Inforg Dev", "Autônomo", "Mar 2022 - Presente", "https://inforg.dev", "Fazendo softwares experimentais para ajudar outros desenvolvedores de software, tanto de sistemas quanto de aplicações, desenvolvendo bibliotecas, utilitários e mais.", "Node.js | JavaScript | Git | HTML | CSS"),
+                xp("Engenheiro de Software", "Inforg Dev", "Autônomo", "Mar 2022 - Presente", "https://inforg.dev", "Fazendo softwares experimentais para ajudar outros desenvolvedores de software, tanto de sistemas quanto de aplicações, desenvolvendo bibliotecas, utilitários e mais.", "Node.js | JavaScript | Git | HTML | CSS | ..."),
 
-                xp("Desenvolvedor Web", "Luis Float", "Freelance", "Jan 2021 - Presente", "https://luisfloat.com", "Instalação, manutenção, configuração e criação de sites como landing page e/ou e-commerce.", "HTML | CSS | MySQL | WordPress"),
+                xp("Desenvolvedor Web", "Luis Float", "Freelance", "Jan 2021 - Presente", "https://luisfloat.com", "Instalação, manutenção, configuração e criação de sites como landing page e/ou e-commerce.", "HTML | CSS | MySQL | WordPress | Woo | ..."),
                 
-                xp("Desenvolvedor de Software", "Luis Float (me)", "Autônomo", "Jan 2020 - Presente", "https://luisfloat.com", "Desenvolvimento de projetos pessoais, como meu gerador de currículo, meu readme, meu portfólio, etc.", "Node.js | JavaScript | Grunt | Git | HTML | CSS"),
+                xp("Desenvolvedor de Software", "Luis Float (me)", "Autônomo", "Jan 2020 - Presente", "https://luisfloat.com", "Desenvolvimento de projetos pessoais, como meu gerador de currículo, meu readme, meu portfólio, etc.", "Node.js | JavaScript | Grunt | Git | HTML | CSS | ..."),
             ],
         },
     },
