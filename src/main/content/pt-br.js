@@ -39,7 +39,7 @@ module.exports = {
         },
         about: {
             title: "Sobre",
-            content: "Estudante profissional e entusiasta com experiência em Desenvolvimento de Software — primeiro contato com programação anos atrás com Java, posteriormente freelancer como Desenvolvedor Web — atualmente migrando para JavaScript e interessado em Desenvolvimento Web, autodidatismo e em diversos projetos pessoais para facilitar o desenvolvimento na área.",
+            content: "Profissional e estudante entusiasta com experiência em Desenvolvimento de Software — primeiro contato com programação anos atrás com Java, posteriormente freelancer como Desenvolvedor Web — atualmente migrando para JavaScript e interessado em Desenvolvimento Web, autodidatismo e em diversos projetos pessoais para facilitar o desenvolvimento na área.",
         },
         experience: {
             title: "Experiência",

@@ -39,7 +39,7 @@ module.exports = {
         },
         about: {
             title: "About",
-            content: "Professional and enthusiastic student with experience in Software Development — first contact with programming years ago with Java, later freelancer as a Web Developer — currently migrating to JavaScript and TypeScript, interested in Web Development, autodidactism and in several personal projects to facilitate development in the area.",
+            content: "Enthusiastic professional and student with experience in Software Development — first contact with programming years ago with Java, later freelancer as a Web Developer — currently migrating to JavaScript and TypeScript, interested in Web Development, autodidactism and in several personal projects to facilitate development in the area.",
         },
         experience: {
             title: "Experience",
