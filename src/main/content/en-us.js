@@ -20,8 +20,8 @@ module.exports = {
         skills: {
             title: "Skills",
             sep: " | ",
-            hard1: [ "JavaScript", "Node.js", "TypeScript", "HTML", "CSS", "Vue.js", "Responsive Design", "Web Optimization", "Git", "Linux Basics" ],
-            hard2: [ "Computer Science Basics", "Design Pattern Basics" ],
+            hard1: [ "JavaScript", "Node.js", "TypeScript", "HTML", "CSS", "Git", "Vue.js", "Linux Basics" ],
+            hard2: [ "Computer Science Basics", "Responsive Design", "Web Optimization", "Design Pattern Basics" ],
             soft1: [ "Problem solving", "Communication", "Adaptability", "Creativity", "Speed learning" ],
             soft2: [ "English", "Portuguese" ],
         },
