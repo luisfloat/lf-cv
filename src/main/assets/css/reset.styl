@@ -5,9 +5,14 @@ transparent-grid(color-1 = color-black, color-2 = color-gray-1-5) {
     background-repeat: repeat;
 }
 
+a4 = {
+    width: 21cm, /* 595px */
+    height: 29.7cm, /* 842px */
+};
+
 size-a4() {
-    width: 21cm !important; /* 595px */
-    height: 29.7cm !important; /* 842px */
+    width: a4.width !important;
+    height: a4.height !important;
 }
 
 * {
@@ -33,6 +38,6 @@ body {
 }
 
 @page { 
-    size: auto;
+    size: a4.width a4.height;
     margin: 0;
 }
