@@ -2,11 +2,15 @@
 .body {    
     display: flex;
 
-    .main { width: 70%; }
-    .sidebar { width: 30%; }
+    .main { width: 60%; }
+    .sidebar { width: 40%; }
 
-    .main, .sidebar {
-        padding: 8px;
+    .sidebar {
+        padding-right: 8px;    
+    }
+
+    .main {
+        padding-left: 8px;
     }
 }
 
@@ -16,7 +20,7 @@ ul li {
 }
 
 .session {
-    &-main {    
+    &-main {
         border-top: 2pt solid color-gray-7;
         margin-bottom: 12pt;
     }

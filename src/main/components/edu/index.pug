@@ -1,7 +1,6 @@
-.session-aside
+.session-main
     h2.h--2= body.edu.title
-    .edu__header
-        h3.h--3
-            span.edu__heading-name= body.edu.heading.name
-            span.edu__heading-desc= body.edu.heading.desc
-    +vbar-list(body.edu.headline, body.skills.sep, "normal")
+    each item, i in { ... body.edu.items }
+        p.edu__item= item
+    
+    p.edu__footer_text= body.edu.footerText

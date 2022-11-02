@@ -16,30 +16,33 @@ module.exports = {
             phone: "+5547999216685",
             email: "contato@luisfloat.com",
             github: "github.com/luisfloat",
+            linkedin: "linkedin.com/in/luisfloat",
         },
         skills: {
             title: "Habilidades",
             sep: " | ",
-            hard1: [ "JavaScript", "Node.js", "TypeScript", "HTML", "CSS", "Git", "Vue.js", "HTTP/HTTPS", "Linux Básico" ],
-            hard2: [ "Design Responsivo", "Otimização de Website", "Design Patterns" ],
+            hard1: [ "JavaScript", "Node.js", "TypeScript", "HTML", "CSS", "Bootstrap", "SCSS", "Git", "HTTP(S)", "Vue", "React", "Linux" ],
+            hard2: [ "Agile", "Web App Audit", "REST", "Design Patterns" ],
             soft1: [ "Resolução de problemas", "Comunicação", "Adaptabilidade", "Criatividade", "Aprendizagem rápida" ],
             soft2: [ "Inglês", "Português" ],
         },
         edu: {
             title: "Educação",
-            heading: {
-                name: "Autodidata",
-                desc: " — Recursos online",
-            },
-            headline: [ "Guias", "Artigos", "Fóruns", "Videos", "Livros", "Docs" ],
+            items: [
+                "Lógica de Programação com JavaScript, SENAI/SC, EAD, 2022/2022",
+                "Programação Básica em Front-End, SENAI/SC, EAD, 2022/2022",
+                "Programação Básica em Back-End, SENAI/SC, EAD, 2022/2022",
+                "User Experience - Interfaces Digitais, SENAI/SC, EAD, 2022/2022",
+            ],
+            footerText: "Desenvolvimento de Software, recursos gratuitos online",
         },
         hobby: {
-            title: "Hobby",
-            headline: [ "Tecnologia", "Arte Scifi", "Linguística", "Filosofia" ],
+            title: "Interesses",
+            headline: [ "Tecnologia", "Scifi", "Linguística", "Filosofia" ],
         },
         about: {
             title: "Sobre",
-            content: "Profissional e estudante entusiasta com experiência em Desenvolvimento de Software — primeiro contato com programação anos atrás com Java, posteriormente freelancer como Desenvolvedor Web — atualmente migrando para JavaScript e interessado em Desenvolvimento Web, autodidatismo e em diversos projetos pessoais para facilitar o desenvolvimento na área.",
+            content: "Sou um Desenvolvedor Web com proficiência em bibliotecas, frameworks e práticas modernas. Tendo a capacidade de aprender rapidamente e sendo autodidata, mantenho-me sempre atualizado com as mais recentes tecnologias. Além disso, tenho a habilidade de me organizar individualmente e também em equipe para solucionar os mais diversos problemas.",
         },
         experience: {
             title: "Experiência",
@@ -48,7 +51,7 @@ module.exports = {
 
                 xp("Desenvolvedor Web", "Luis Float", "Freelance", "Jan 2021 - Presente", "https://luisfloat.com", "Instalação, manutenção, configuração e criação de sites como landing page e/ou e-commerce.", "HTML | CSS | MySQL | WordPress | Woo | ..."),
                 
-                xp("Desenvolvedor de Software", "Luis Float (me)", "Autônomo", "Jan 2020 - Presente", "https://luisfloat.com", "Desenvolvimento de projetos pessoais, como meu gerador de currículo, meu readme, meu portfólio, etc.", "Node.js | JavaScript | Grunt | Git | HTML | CSS | ..."),
+                xp("Desenvolvedor de Software", "Luis Float (me)", "Autônomo", "Jan 2020 - Presente", "https://luisfloat.com", "Desenvolvimento de projetos pessoais, como meu gerador de currículo, meu readme, meu portfólio, etc.", "Node.js | JavaScript | Git | HTML | CSS | ..."),
             ],
         },
     },

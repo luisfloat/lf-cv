@@ -16,30 +16,33 @@ module.exports = {
             phone: "+5547999216685",
             email: "contact@luisfloat.com",
             github: "github.com/luisfloat",
+            linkedin: "linkedin.com/in/luisfloat",
         },
         skills: {
             title: "Skills",
             sep: " | ",
-            hard1: [ "JavaScript", "Node.js", "TypeScript", "HTML", "CSS", "Git", "Vue.js", "HTTP/HTTPS", "Linux Basics" ],
-            hard2: [ "Responsive Design", "Web Optimization", "Design Pattern Basics" ],
+            hard1: [ "JavaScript", "Node.js", "TypeScript", "HTML", "CSS", "Bootstrap", "SCSS", "Git", "HTTP(S)", "Vue", "React", "Linux Basics" ],
+            hard2: [ "Agile", "Web App Audit", "REST", "Design Pattern Basics" ],
             soft1: [ "Problem solving", "Communication", "Adaptability", "Creativity", "Speed learning" ],
             soft2: [ "English", "Portuguese" ],
         },
         edu: {
             title: "Education",
-            heading: {
-                name: "Autodidact",
-                desc: " — Resources online",
-            },
-            headline: [ "Guides", "Articles", "Forums", "Videos", "Books", "Docs" ],
+            items: [
+                "Programming Logic with JavaScript, SENAI/SC, ODL, 2022/2022",
+                "Programming Front-end Basics, SENAI/SC, ODL, 2022/2022",
+                "Programming Back-end Basics, SENAI/SC, ODL, 2022/2022",
+                "User Experience - Digital Interfaces, SENAI/SC, ODL, 2022/2022",
+            ],
+            footerText: "Software development, free online resources",
         },
         hobby: {
-            title: "Hobby",
-            headline: [ "Technology", "Scifi Art", "Linguistics", "Philosophy" ],
+            title: "Interests",
+            headline: [ "Technology", "Scifi", "Linguistics", "Philosophy" ],
         },
         about: {
             title: "About",
-            content: "Enthusiastic professional and student with experience in Software Development — first contact with programming years ago with Java, later freelancer as a Web Developer — currently migrating to JavaScript and TypeScript, interested in Web Development, autodidactism and in several personal projects to facilitate development in the area.",
+            content: "I am a Web Developer with proficiency in libraries, frameworks and modern practices. Having the ability to learn quickly and being self-taught, I always keep up to date with the latest technologies. In addition, I have the ability to organize myself individually and also as a team to solve the most diverse problems.",
         },
         experience: {
             title: "Experience",
@@ -48,7 +51,7 @@ module.exports = {
 
                 xp("Web Developer", "Luis Float", "Freelance", "Jan 2021 - Present", "https://luisfloat.com", "Installation, maintenance, configuration and creation of websites such as landing page and/or e-commerce.", "HTML | CSS | MySQL | WordPress | Woo | ..."),
                 
-                xp("Software Developer", "Luis Float (me)", "Self-employed", "Jan 2020 - Present", "https://luisfloat.com", "Development of personal projects, such as my curriculum generator, my readme, my portfolio, etc.", "Node.js | JavaScript | Grunt | Git | HTML | CSS | ..."),
+                xp("Software Developer", "Luis Float (me)", "Self-employed", "Jan 2020 - Present", "https://luisfloat.com", "Development of personal projects, such as my curriculum generator, my readme, my portfolio, etc.", "Node.js | JavaScript | Git | HTML | CSS | ..."),
             ],
         },
     },

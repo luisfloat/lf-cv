@@ -10,14 +10,14 @@ html
         link(rel="stylesheet", href="assets/style.css")
     body
         .body
-            .main
+            .sidebar
                 include components/header/index
                 include components/about/index
-                include components/xp/index
-            .sidebar
                 include components/details/index
                 include components/skills/index
-                include components/edu/index
                 include components/hobby/index
+            .main
+                include components/xp/index
+                include components/edu/index
         .footer
             include components/footer/index
