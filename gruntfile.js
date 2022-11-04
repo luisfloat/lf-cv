@@ -17,7 +17,7 @@ var config = {
     },
     css: {
         src: 'src/main/**/*.styl',
-        srcIndex: 'src/main/index.styl',
+        srcIndex: 'src/main/style/index.styl',
         dist: 'dist/assets/style.css',
     },
     img: {
