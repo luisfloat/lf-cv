@@ -3,9 +3,9 @@ mixin footer__link(name, protoc, value)
         .footer__link-name= name
         -
             let anchorType =
-                protoc == "mailto" ? "email" :
-                protoc == "https" ? "website" :
-                protoc == "tel" ? "phone" : "normal";
+                protoc == "mailto" ? "link--in" :
+                protoc == "https" ? "link--ex" :
+                protoc == "tel" ? "link--in" : "link--none";
         a.footer__link-a(target="_blank" href=(protoc + ":" + value) class=anchorType)= value
 
 .session-footer
