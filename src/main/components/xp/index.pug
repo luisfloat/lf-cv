@@ -1,13 +1,13 @@
-.session-main
-    h2.h--2= body.experience.title
+.section.section--main
+    h2.section__title= body.experience.title
     .xp-items
         each item in body.experience.items
-            .xp__header
-                h3.h--3.xp__role= item.role
-                h4.h--4
-                    a.xp__company(href=item.link target="_blank")= item.company
-                    span.xp__employment_type= item.employmentType
-                h4.h--4.xp__date= item.date
+            .xp-header
+                h3.xp-header__role= item.role
+                h4.xp-headline
+                    a.xp-headline__company(href=item.link target="_blank")= item.company
+                    span.xp-headline__employment-type= item.employmentType
+                h4.xp-header__date= item.date
             - if(item.description)
-                p.p.xp__description= item.description
-            p.p.xp__skills= item.skills
+                p.xp-description= item.description
+            p.xp-skills= item.skills

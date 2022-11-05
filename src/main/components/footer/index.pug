@@ -1,17 +1,17 @@
-mixin footer__link(name, protoc, value)
-    .footer__link
-        .footer__link-name= name
+mixin footer-link(name, protoc, value)
+    .footer-link
+        .footer-link__label= name
         -
             let anchorType =
                 protoc == "mailto" ? "link--in" :
                 protoc == "https" ? "link--ex" :
                 protoc == "tel" ? "link--in" : "link--none";
-        a.footer__link-a(target="_blank" href=(protoc + ":" + value) class=anchorType)= value
+        a.footer-link__a(target="_blank" href=(protoc + ":" + value) class=anchorType)= value
 
-.session-footer
-    .footer__links
-        +footer__link("Email", "mailto", body.contact.email)
-        +footer__link("GitHub", "https", body.contact.github)
-        +footer__link("WhatsApp", "tel", formatPhone(body.contact.phone))
-    .footer__logo
-        img.footer__image(src="assets/img/lf-logo.png" alt="Logo")
+.section.section--footer
+    .footer-links
+        +footer-link("Email", "mailto", body.contact.email)
+        +footer-link("GitHub", "https", body.contact.github)
+        +footer-link("WhatsApp", "tel", formatPhone(body.contact.phone))
+    .footer-logo
+        img.footer-logo__image(src="assets/img/lf-logo.png" alt="Logo")

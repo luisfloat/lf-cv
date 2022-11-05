@@ -1,23 +1,25 @@
-.xp {
-    &-items > &__header:not(:first-child) {
+.xp-header {
+    &:not(:first-child) {
         margin-top: 10pt;
     }
 
     &__role {
+        @extend .h--3;
         font-size: 10pt;
         color: color-azure-4;
         text-decoration: none;
     }
 
-    &__skills {
-        
-    }
-
     &__date {
+        @extend .h--3;
         font-weight: 400;
         font-size: 9pt;
         color: color-gray-4;
     }
+}
+
+.xp-headline {
+    @extend .h--3;
 
     &__company {
         color: color-gray-3;
@@ -26,7 +28,7 @@
         text-decoration: underline;
     }
 
-    &__employment_type {
+    &__employment-type {
         font-weight: 400;
         font-size: 9pt;
         color: color-gray-3;
@@ -42,9 +44,14 @@
             position: absolute;
         }
     }
+}
 
-    &__description {
-        margin-top: 6pt;
-        margin-bottom: 10pt;
-    }
+.xp-description {
+    @extend .p;
+    margin-top: 6pt;
+    margin-bottom: 10pt;
+}
+
+.xp-skills {
+    @extend .p;
 }
