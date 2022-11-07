@@ -21,7 +21,7 @@ It's the curriculum generator for my personal curricula.
 Clone from GitHub repository:
 
 ```bash
-git clone https://github.com/luisfloat/lf-cv
+git clone https://github.com/luisfloat/cv
 ```
 
 For usage:
