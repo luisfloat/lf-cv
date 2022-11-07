@@ -4,8 +4,9 @@
   "description": "The curriculum generator for my personal curricula.",
   "main": "index.js",
   "scripts": {
-    "main:dev": "grunt main:dev",
-    "main:build": "grunt main:build",
+    "main:dev": "vite",
+    "main:build": "vite build",
+    "main:preview": "vite preview",
     "main:clean": "grunt main:clean",
     "main:print:pdf": "grunt main:print:pdf"
   },
@@ -18,15 +19,14 @@
   "author": "Luis Float <contact@luisfloat.com> (https://luisfloat.com)",
   "license": "UNLICENSED",
   "devDependencies": {
+    "@vitejs/plugin-vue": "^3.2.0",
+    "@vitejs/plugin-vue-jsx": "^2.1.0",
     "grunt": "^1.5.3",
     "grunt-cli": "^1.4.3",
-    "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-pug": "^3.0.0",
-    "grunt-contrib-stylus": "^1.2.0",
-    "grunt-contrib-watch": "^1.1.0",
     "lfds-tokens": "github:luisfloat/lfds-tokens",
-    "pug": "^3.0.2",
     "puppeteer": "^16.1.1",
-    "spongia-css": "github:inforgdev/spongia-css"
+    "spongia-css": "github:inforgdev/spongia-css",
+    "vue": "^3.2.41",
+    "vue-router": "^4.1.6"
   }
 }

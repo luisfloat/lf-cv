@@ -1,6 +1,6 @@
-const { xp } = require("./src/main/content/factory.js");
+import { xp } from "./factory.ts";
 
-module.exports = {
+export default {
     head: {
         title: "Luis Float CV (pt-br)",
     },
@@ -42,7 +42,7 @@ module.exports = {
         },
         about: {
             title: "Sobre",
-            content: "Sou um Desenvolvedor Web com proficiência em bibliotecas, frameworks e práticas modernas. Tendo a capacidade de aprender rapidamente e sendo autodidata, mantenho-me sempre atualizado com as mais recentes tecnologias. Além disso, tenho a habilidade de me organizar individualmente e também em equipe para solucionar os mais diversos problemas.",
+            text: "Sou um Desenvolvedor Web com proficiência em bibliotecas, frameworks e práticas modernas. Tendo a capacidade de aprender rapidamente e sendo autodidata, mantenho-me sempre atualizado com as mais recentes tecnologias. Além disso, tenho a habilidade de me organizar individualmente e também em equipe para solucionar os mais diversos problemas.",
         },
         experience: {
             title: "Experiência",

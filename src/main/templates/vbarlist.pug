@@ -1,9 +1,0 @@
-mixin vbar-list(items, sep, type)
-    p.p
-        each item, index in items
-            if type == "primary"
-                span.vbar-list__item.vbar-list__item--primary= item
-            else
-                span.vbar-list__item= item
-            if index !== items.length - 1
-                span.vbar-list__sep= sep
