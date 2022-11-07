@@ -10,9 +10,12 @@ It's the curriculum generator for my personal curricula.
 
 ## Technologies
 
-* **JavaScript** for configuring content and scripts;
-* **Pug** for HTML templating engine;
-* **Stylus** for CSS preprocessor;
+* **JavaScript** for task scripts;
+* **TS(X)** for configuring content and UI scripts;
+* **Vue3** as web UI framework;
+* **Vue Router** for SPA routing;
+* **Stylus** as CSS preprocessor;
+* **Vite** for dev server, building and previewing;
 * **Grunt** as task runner;
 * **Puppeteer** for PDF printing.
 
@@ -29,9 +32,9 @@ For usage:
 Name | Script | Description
 -----|---------|-----------------
 `main:dev` | ```npm run main:dev``` | Enable source code watch and live-reload
-`main:build` | ```npm run main:build``` | Build HTML and assets into `dist/`
+`main:build` | ```npm run main:build``` | Build website into `dist/web/`
 `main:clean` | ```npm run main:clean``` | Delete `dist/`
-`main:print:pdf` | ```npm run main:print:pdf``` | Print PDFs from `dist/`
+`main:print:pdf` | ```npm run main:print:pdf``` | Build website and print PDFs
 
 ## Author
 
