@@ -21,7 +21,9 @@ const props = defineProps<{
 const content = computed(() => langs[props.lang] || en);
 provide("content", content);
 
-const render = () => {
+function render() {
+    const { extra } = content.value.body;
+
     document.head.getElementsByTagName("title")[0].innerHTML = content.value.head.title;
 
     return (
