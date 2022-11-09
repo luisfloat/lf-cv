@@ -9,21 +9,16 @@ import Hobby from "../components/Hobby.vue";
 import Skills from "../components/Skills.vue";
 import Xp from "../components/Xp.vue";
 
-import en from "../content/en-us.ts";
-import pt from "../content/pt-br.ts";
-
-const langs = { "en-us": en, "pt-br": pt };
+import { content as langs } from "../content/index";
 
 const props = defineProps<{
     lang: string,
 }>();
 
-const content = computed(() => langs[props.lang] || en);
+const content = computed(() => langs[props.lang] || langs["en-us"]);
 provide("content", content);
 
 function render() {
-    const { extra } = content.value.body;
-
     document.head.getElementsByTagName("title")[0].innerHTML = content.value.head.title;
 
     return (
