@@ -3,6 +3,13 @@ import vueJsx from "@vitejs/plugin-vue-jsx";
 
 export default {
     root: "src/main/",
+    css: {
+        preprocessorOptions: {
+            stylus: {
+                additionalData: `@import "lfds-tokens/dist/lfds-tokens.styl";`,
+            },
+        },
+    },
     build: {
         outDir: "../../dist/web/",
         emptyOutDir: true,

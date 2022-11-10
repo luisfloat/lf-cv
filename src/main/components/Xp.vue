@@ -19,3 +19,9 @@ function render() {
 </script>
 
 <template><render/></template>
+
+<style module lang="stylus">
+div {
+    
+}
+</style>

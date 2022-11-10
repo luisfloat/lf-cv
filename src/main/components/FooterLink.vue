@@ -1,6 +1,8 @@
 <script lang="tsx" setup>
+import { useCssModule } from "vue";
 import { formatPhone } from "../helpers/formatPhone";
 
+const classes = useCssModule();
 const props = defineProps<{
     label: string,
     obj: any,
@@ -23,12 +25,12 @@ function render() {
     const linkAttrs = {
         href,
         target: "_blank",
-        class: `footer-link__a link--${anchorType}`,
+        class: `${classes.link__a} link--${anchorType}`,
     };
 
     return (
-        <div class="footer-link">
-            <div class="footer-link__label">{ label }</div>
+        <div class={classes.link}>
+            <div class={classes.link__label}>{ label }</div>
             <a {...linkAttrs}>{ value }</a>
         </div>
     );
@@ -36,3 +38,20 @@ function render() {
 </script>
 
 <template><render/></template>
+
+<style module lang="stylus">
+.link {
+    display: flex;
+
+    &__label {
+        width: 60pt;
+        font-weight: 400;
+        color: color-gray-4;
+        font-size: 9pt;
+    }
+
+    &__a {
+        font-size: 9pt;
+    }    
+}
+</style>

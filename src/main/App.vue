@@ -1,6 +1,9 @@
 <script lang="tsx" setup>
+import { useCssModule } from "vue";
 import { useRouter } from "vue-router";
 import globalStyle from "./style/index.styl?inline";
+
+const classes = useCssModule();
 
 function render() {
     const router = useRouter();
@@ -10,16 +13,16 @@ function render() {
         { to: "pt-br", label: "pt-br" },
     ];
     
-    const activeRoute = (routeName) => route.value.params.lang === routeName ? "is-active" : "";
+    const activeRoute = (routeName) => route.value.params.lang === routeName ? classes.isActive : "";
 
     const routerLink = (route: any) => (
-        <router-link to={route.to} class={`nav__link ${activeRoute(route.to)}`}>{ route.label }</router-link>
+        <router-link to={route.to} class={`${classes.nav__link} ${activeRoute(route.to)}`}>{ route.label }</router-link>
     );
 
     return (
         <>
             <style>{ globalStyle }</style>
-            <div class="nav">
+            <div class={classes.nav}>
                 {routes.map((o: any) => routerLink(o))}
             </div>
             <router-view />
@@ -29,3 +32,36 @@ function render() {
 </script>
 
 <template><render/></template>
+
+<style module lang="stylus">
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-top: 8px;
+    margin-left: 8px;
+    color: color-white;
+
+    @media print {
+        display: none;
+    }
+
+    &__link {
+        color: color-azure-5;
+        padding: 4px 8px;
+        font-size: 14px;
+
+        &:hover {
+            color: color-azure-4;  
+        }
+
+        &.isActive {
+            color: color-gray-5;
+
+            &:hover {
+                color: color-gray-4;  
+            }    
+        }
+    }
+}
+</style>

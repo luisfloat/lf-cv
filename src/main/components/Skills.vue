@@ -22,3 +22,11 @@ function render() {
 </script>
 
 <template><render/></template>
+
+<style module lang="stylus">
+.skills {
+    &__hard-name {
+        color: color-azure-4;
+    }
+}
+</style>

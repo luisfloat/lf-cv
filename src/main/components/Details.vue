@@ -2,7 +2,9 @@
 import { formatPhone } from "../helpers/formatPhone";
 import DetailsItem from "./DetailsItem.vue";
 import { useContent } from "../composables/useContent";
+import { useCssModule } from "vue";
 
+const classes = useCssModule();
 const content = useContent();
 
 function render() {
@@ -23,7 +25,7 @@ function render() {
         <div class="section section--aside">
             <h2 class="section__title">{ details }</h2>
             <nav>
-                <ul class="details__items">
+                <ul class={classes.items}>
                     { items.map((o) => <DetailsItem {...o}/>) }
                 </ul>
             </nav>
@@ -33,3 +35,11 @@ function render() {
 </script>
 
 <template><render/></template>
+
+<style module lang="stylus">
+.items {
+    li {
+        line-height: 1.2;
+    }    
+}
+</style>
