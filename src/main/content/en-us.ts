@@ -21,20 +21,21 @@ export default {
         skills: {
             title: "Skills",
             sep: " | ",
-            hard1: [ "JavaScript", "Node.js", "TypeScript", "HTML", "CSS", "Bootstrap", "SCSS", "Git", "HTTP(S)", "Vue", "React", "Linux Basics" ],
-            hard2: [ "Agile", "Web App Audit", "REST", "Design Pattern Basics" ],
+            hard1: [ "JavaScript HTML CSS", "Node.js", "TypeScript", "Bootstrap", "SCSS", "Git", "HTTP(S)", "Vue", "React", "Vite", "Linux" ],
+            hard2: [ "Agile", "Web App Audit", "REST", "Design Pattern" ],
             soft1: [ "Problem solving", "Communication", "Adaptability", "Creativity", "Speed learning" ],
             soft2: [ "English", "Portuguese" ],
         },
         edu: {
             title: "Education",
             items: [
-                "Programming Logic with JavaScript, SENAI/SC, ODL, 2022/2022",
-                "Programming Front-end Basics, SENAI/SC, ODL, 2022/2022",
-                "Programming Back-end Basics, SENAI/SC, ODL, 2022/2022",
-                "User Experience - Digital Interfaces, SENAI/SC, ODL, 2022/2022",
+                "- Programming Logic with JavaScript, SENAI/SC, ODL, 2022/2022",
+                "- Programming Front-end Basics, SENAI/SC, ODL, 2022/2022",
+                "- Programming Back-end Basics, SENAI/SC, ODL, 2022/2022",
+                "- Cloud Computing, SENAI/SC, ODL, 2022/2022",
+                "- User Experience - Digital Interfaces, SENAI/SC, ODL, 2022/2022",
             ],
-            footerText: "Software development, free online resources",
+            footerText: "- Software development, free online resources",
         },
         hobby: {
             title: "Interests",

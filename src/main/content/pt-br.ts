@@ -21,7 +21,7 @@ export default {
         skills: {
             title: "Habilidades",
             sep: " | ",
-            hard1: [ "JavaScript", "Node.js", "TypeScript", "HTML", "CSS", "Bootstrap", "SCSS", "Git", "HTTP(S)", "Vue", "React", "Linux" ],
+            hard1: [ "JavaScript HTML CSS", "Node.js", "TypeScript", "Bootstrap", "SCSS", "Git", "HTTP(S)", "Vue", "React", "Vite", "Linux" ],
             hard2: [ "Agile", "Web App Audit", "REST", "Design Patterns" ],
             soft1: [ "Resolução de problemas", "Comunicação", "Adaptabilidade", "Criatividade", "Aprendizagem rápida" ],
             soft2: [ "Inglês", "Português" ],
@@ -29,12 +29,13 @@ export default {
         edu: {
             title: "Educação",
             items: [
-                "Lógica de Programação com JavaScript, SENAI/SC, EAD, 2022/2022",
-                "Programação Básica em Front-End, SENAI/SC, EAD, 2022/2022",
-                "Programação Básica em Back-End, SENAI/SC, EAD, 2022/2022",
-                "User Experience - Interfaces Digitais, SENAI/SC, EAD, 2022/2022",
+                "- Lógica de Programação com JavaScript, SENAI/SC, EAD, 2022/2022",
+                "- Programação Básica em Front-End, SENAI/SC, EAD, 2022/2022",
+                "- Programação Básica em Back-End, SENAI/SC, EAD, 2022/2022",
+                "- Computação em Nuvem, SENAI/SC, EAD, 2022/2022",
+                "- User Experience - Interfaces Digitais, SENAI/SC, EAD, 2022/2022",
             ],
-            footerText: "Desenvolvimento de Software, recursos gratuitos online",
+            footerText: "- Desenvolvimento de Software, recursos gratuitos online",
         },
         hobby: {
             title: "Interesses",
