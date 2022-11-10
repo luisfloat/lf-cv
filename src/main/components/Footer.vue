@@ -33,6 +33,7 @@ function render() {
 <style module lang="stylus">
 .links {
     width: 100%;
+    z-index: 1;
 }
 
 .logo {
