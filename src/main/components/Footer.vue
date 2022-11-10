@@ -1,26 +1,25 @@
 <script lang="tsx" setup>
 import { useContent } from "../composables/useContent";
-import { formatPhone } from "../helpers/formatPhone";
 import FooterLink from "./FooterLink.vue";
 
 const content = useContent();
 
 function render() {
-    const { email, github, phone } = content.value.body?.contact;
+    const body = content.value.body;
+    const { poweredBy, links } = body?.footer;
 
-    const links: any = [
-        { name: "Email", protoc: "mailto", value: email },
-        { name: "GitHub", protoc: "https", value: github },
-        { name: "WhatsApp", protoc: "tel", domain: phone, value: formatPhone(phone) },
-    ];
+    const linkAttrs = (k: string) => ({ label: k, obj: links[k] });
 
     return (
         <div class="section section--footer">
             <div class="footer-links">
-                {links.map((o: any) => <FooterLink {...o}/>)}
+                {Object.keys(links).map((k: string) => <FooterLink {...linkAttrs(k)}/>)}
             </div>
             <div class="footer-logo">
                 <img class="footer-logo__image" src="assets/img/lf-logo.png" alt="Logo" />
+            </div>
+            <div class="footer-powered-by">
+                <div class="footer-powered-by__text" data-content={ poweredBy }></div>
             </div>
         </div>
     );

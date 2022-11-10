@@ -9,6 +9,14 @@ export default {
             title: "Luis Float",
             description: "Desenvolvedor Web",
         },
+        footer: {
+            links: {
+                "E-mail": { value: "contato@luisfloat.com", href: "mailto:contato@luisfloat.com" },
+                "GitHub": { value: "github.com/luisfloat", href: "https://github.com/luisfloat" },
+                "WhatsApp": { value: "+5547999216685", href: "tel:+5547999216685" },
+            },
+            poweredBy: "Desenvolvido com Vue.js",
+        },
         details: "Detalhes",
         contact: {
             address: "Santa Catarina, Brasil",

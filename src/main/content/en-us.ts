@@ -9,6 +9,14 @@ export default {
             title: "Luis Float",
             description: "Web Developer",
         },
+        footer: {
+            links: {
+                "E-mail": { value: "contact@luisfloat.com", href: "mailto:contact@luisfloat.com" },
+                "GitHub": { value: "github.com/luisfloat", href: "https://github.com/luisfloat" },
+                "WhatsApp": { value: "+5547999216685", href: "tel:+5547999216685" },
+            },
+            poweredBy: "Powered by Vue.js",
+        },
         details: "Details",
         contact: {
             address: "Santa Catarina, Brazil",
