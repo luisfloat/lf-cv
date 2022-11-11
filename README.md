@@ -1,8 +1,8 @@
 # lf-cv
 
-## About
-
 It's the curriculum generator for my personal curricula.
+
+## Features
 
 * 🌎 **International** - Support multiple languages, currently English and Brazilian Portuguese;
 * 🌐 **Webpage support** - Generate HTML and assets for browser view;
