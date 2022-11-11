@@ -21,20 +21,20 @@ It's the curriculum generator for my personal curricula.
 
 ## Installation
 
-Clone from GitHub repository:
-
 ```bash
-git clone https://github.com/luisfloat/cv
+git clone https://github.com/luisfloat/cv.git &&
+cd cv/ &&
+npm install
 ```
 
-For usage:
+## Usage
 
 Name | Script | Description
 -----|---------|-----------------
 `main:dev` | ```npm run main:dev``` | Enable source code watch and live-reload
 `main:build` | ```npm run main:build``` | Build website into `dist/web/`
 `main:clean` | ```npm run main:clean``` | Delete `dist/`
-`main:print:pdf` | ```npm run main:print:pdf``` | Build website and print PDFs
+`main:print:pdf` | ```npm run main:print:pdf``` | Build website and print PDFs to `dist/print/`
 
 ## Author
 
