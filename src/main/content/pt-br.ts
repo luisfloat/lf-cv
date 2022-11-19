@@ -42,6 +42,7 @@ export default {
                 "- Programação Básica em Back-End, SENAI/SC, EAD, 2022/2022",
                 "- Computação em Nuvem, SENAI/SC, EAD, 2022/2022",
                 "- User Experience - Interfaces Digitais, SENAI/SC, EAD, 2022/2022",
+                "- Noções de Inglês Técnico, SENAI/SC, EAD, 2022/2022",
             ],
             footerText: "- Desenvolvimento de Software, recursos gratuitos online",
         },
@@ -60,7 +61,7 @@ export default {
 
                 xp("Desenvolvedor Web", "Luis Float", "Freelance", "Jan 2021 - Presente", "https://luisfloat.com", "Instalação, manutenção, configuração e criação de sites como landing page e/ou e-commerce.", "HTML | CSS | MySQL | WordPress | Woo | ..."),
                 
-                xp("Desenvolvedor de Software", "Luis Float (me)", "Autônomo", "Jan 2020 - Presente", "https://luisfloat.com", "Desenvolvimento de projetos pessoais, como meu gerador de currículo, meu readme, meu portfólio, etc.", "Node.js | JavaScript | Git | HTML | CSS | ..."),
+                xp("Desenvolvedor de Software", "Luis Float (me)", "Autônomo", "Jan 2020 - Presente", "https://luisfloat.com", "Desenvolvimento de projetos pessoais, como meu gerador de currículo, meu readme, meu portfólio, etc.", "Vue | React | Bootstrap | Nest.js | Git | ..."),
             ],
         },
     },

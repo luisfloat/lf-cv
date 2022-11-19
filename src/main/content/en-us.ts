@@ -42,6 +42,7 @@ export default {
                 "- Programming Back-end Basics, SENAI/SC, ODL, 2022/2022",
                 "- Cloud Computing, SENAI/SC, ODL, 2022/2022",
                 "- User Experience - Digital Interfaces, SENAI/SC, ODL, 2022/2022",
+                "- Technical English Notions, SENAI/SC, ODL, 2022/2022",
             ],
             footerText: "- Software development, free online resources",
         },
@@ -60,7 +61,7 @@ export default {
 
                 xp("Web Developer", "Luis Float", "Freelance", "Jan 2021 - Present", "https://luisfloat.com", "Installation, maintenance, configuration and creation of websites such as landing page and/or e-commerce.", "HTML | CSS | MySQL | WordPress | Woo | ..."),
                 
-                xp("Software Developer", "Luis Float (me)", "Self-employed", "Jan 2020 - Present", "https://luisfloat.com", "Development of personal projects, such as my curriculum generator, my readme, my portfolio, etc.", "Node.js | JavaScript | Git | HTML | CSS | ..."),
+                xp("Software Developer", "Luis Float (me)", "Self-employed", "Jan 2020 - Present", "https://luisfloat.com", "Development of personal projects, such as my curriculum generator, my readme, my portfolio, etc.", "Vue | React | Bootstrap | Nest.js | Git | ..."),
             ],
         },
     },
