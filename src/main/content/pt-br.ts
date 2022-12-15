@@ -29,10 +29,10 @@ export default {
         skills: {
             title: "Habilidades",
             sep: " | ",
-            hard1: [ "JavaScript HTML CSS", "Node.js", "TypeScript", "Bootstrap", "SCSS", "Git", "HTTP(S)", "Vue", "React", "Vite", "Linux" ],
+            hard1: [ "JavaScript HTML CSS", "Bootstrap", "Stylus/SCSS", "Git", "HTTP", "Vue/React", "TypeScript", "Node.js", "Express", "MongoDB", "Linux" ],
             hard2: [ "Agile", "Web App Audit", "REST", "Design Patterns" ],
             soft1: [ "Resolução de problemas", "Comunicação", "Adaptabilidade", "Criatividade", "Aprendizagem rápida" ],
-            soft2: [ "Inglês", "Português" ],
+            soft2: [ "Inglês B2+", "Português N" ],
         },
         edu: {
             title: "Educação",
@@ -52,15 +52,13 @@ export default {
         },
         about: {
             title: "Sobre",
-            text: "Sou um Desenvolvedor Web com proficiência em bibliotecas, frameworks e práticas modernas. Tendo a capacidade de aprender rapidamente e sendo autodidata, mantenho-me sempre atualizado com as mais recentes tecnologias. Além disso, tenho a habilidade de me organizar individualmente e também em equipe para solucionar os mais diversos problemas.",
+            text: "Sou um desenvolvedor web full stack com proficiência no ecosistema JavaScript. Tendo a capacidade de aprender rapidamente e sendo autodidata, mantenho-me sempre atualizado com as mais recentes tecnologias. Além disso, tenho a habilidade de me organizar individualmente e também em equipe para solucionar os mais diversos problemas.",
         },
         experience: {
             title: "Experiência",
             items: [
                 xp("Engenheiro de Software", "Inforg Dev", "Autônomo", "Mar 2022 - Presente", "https://inforg.dev", "Fazendo softwares experimentais para ajudar outros desenvolvedores de software, tanto de sistemas quanto de aplicações, desenvolvendo bibliotecas, utilitários e mais.", "Node.js | JavaScript | Git | HTML | CSS | ..."),
-
                 xp("Desenvolvedor Web", "Luis Float", "Freelance", "Jan 2021 - Presente", "https://luisfloat.com", "Instalação, manutenção, configuração e criação de sites como landing page e/ou e-commerce.", "HTML | CSS | MySQL | WordPress | Woo | ..."),
-                
                 xp("Desenvolvedor de Software", "Luis Float (me)", "Autônomo", "Jan 2020 - Presente", "https://luisfloat.com", "Desenvolvimento de projetos pessoais, como meu gerador de currículo, meu readme, meu portfólio, etc.", "Vue | React | Bootstrap | Nest.js | Git | ..."),
             ],
         },
