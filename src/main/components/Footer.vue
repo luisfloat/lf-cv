@@ -18,7 +18,7 @@ function render() {
                 {Object.keys(links).map((k: string) => <FooterLink {...linkAttrs(k)}/>)}
             </div>
             <div class={classes.logo}>
-                <img class={classes.logo__image} src="assets/img/lf-logo.png" alt="Logo" />
+                <img class={classes.logo__image} src="assets/img/logo.png" alt="Logo" />
             </div>
             <div class={classes.poweredBy}>
                 <div class={classes.poweredBy__text} data-content={ poweredBy }></div>
