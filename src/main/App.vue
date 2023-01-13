@@ -1,8 +1,10 @@
 <script lang="tsx" setup>
 import { useCssModule } from "vue";
 import { useRouter } from "vue-router";
+import { useContent } from "./composables/useContent";
 import globalStyle from "./style/index.styl?inline";
 
+const content = useContent();
 const classes = useCssModule();
 
 function render() {
@@ -23,6 +25,9 @@ function render() {
         <>
             <style>{ globalStyle }</style>
             <div class={classes.nav}>
+                <button class={classes.print} onClick={() => print()}>
+                    {content.value.body.nav.print}
+                </button>
                 {routes.map((o: any) => routerLink(o))}
             </div>
             <router-view />
@@ -34,6 +39,30 @@ function render() {
 <template><render/></template>
 
 <style module lang="stylus">
+.print {
+    margin-right: 8px;
+
+    padding: 4px 8px;
+    background: color-azure-4;
+    color: color-white;
+    transition: background .25s ease-out,color .25s ease-out;
+    border: 1px solid color-azure-4;
+    border-radius: 4px;
+
+    &:hover {
+        cursor: pointer;
+        background: color-azure-3;
+    }
+
+    &:focus {
+        outline: 4px solid alpha(color-azure-4, 0.1);
+    }
+
+    &:active {
+        outline: none;
+    }
+}
+
 .nav {
     position: fixed;
     top: 0;

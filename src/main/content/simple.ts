@@ -8,6 +8,9 @@ export const content: SimpleContentType = (tl, f, lang) => ({
         title: f("Luis Float CV (en-us)", "Luis Float CV (pt-br)"),
     },
     body: {
+        nav: {
+            print: f("Print", "Imprimir"),
+        },
         contact: {
             address: f("Santa Catarina, Brazil", "Santa Catarina, Brasil"),
             name: "Luís Fillipe Emidio",
@@ -29,7 +32,10 @@ export const content: SimpleContentType = (tl, f, lang) => ({
                 "GitHub": { value: "github.com/luisfloat", href: "https://github.com/luisfloat" },
                 "WhatsApp": { value: "+5547999216685", href: "tel:+5547999216685" },
             },
-            poweredBy: f("Powered by Vue.js", "Desenvolvido com Vue.js"),
+            generation: {
+                text: f("Generated on ", "Gerado em "),
+                timeFormat: f("MMMM Do, YYYY hh:mm:ss a", "MM/DD/YYYY HH:mm:ss"),
+            },
         },
         details: f("Details", "Detalhes"),
         skills: {

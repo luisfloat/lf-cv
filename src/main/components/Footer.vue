@@ -2,15 +2,19 @@
 import { useCssModule } from "vue";
 import { useContent } from "../composables/useContent";
 import FooterLink from "./FooterLink.vue";
+import moment from "moment";
 
 const classes = useCssModule();
 const content = useContent();
 
 function render() {
     const body = content.value.body;
-    const { poweredBy, links } = body?.footer;
+    const { generation, links } = body?.footer;
 
     const linkAttrs = (k: string) => ({ label: k, obj: links[k] });
+
+    moment.locale(generation.locale);
+    const generatedTime = moment().format(generation.timeFormat);
 
     return (
         <div class="section section--footer">
@@ -20,8 +24,11 @@ function render() {
             <div class={classes.logo}>
                 <img class={classes.logo__image} src="assets/img/logo.png" alt="Logo" />
             </div>
-            <div class={classes.poweredBy}>
-                <div class={classes.poweredBy__text} data-content={ poweredBy }></div>
+            <div class={classes.generation}>
+                <div
+                    class={classes.generation__text}
+                    data-content={generation.text + generatedTime}>
+                </div>
             </div>
         </div>
     );
@@ -47,9 +54,14 @@ function render() {
     }
 }
 
-.poweredBy {
+.generation {
+    display: none;
     position: absolute;
     
+    @media print {
+        display: block;
+    }
+
     &__text::after {
         position: relative;
         content: attr(data-content);

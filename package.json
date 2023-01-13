@@ -1,6 +1,6 @@
 {
   "name": "lf-cv",
-  "version": "0.7.2",
+  "version": "0.8.0",
   "description": "The curriculum generator for my personal curricula.",
   "main": "index.js",
   "scripts": {
@@ -22,11 +22,15 @@
     "@vitejs/plugin-vue": "^3.2.0",
     "@vitejs/plugin-vue-jsx": "^2.1.0",
     "grunt": "^1.5.3",
-    "grunt-cli": "^1.4.3",
+    "grunt-cli": "^1.4.3"
+  },
+  "dependencies": {
     "lfds-tokens": "github:luisfloat/lfds-tokens",
+    "moment": "^2.29.4",
     "puppeteer": "^16.1.1",
     "spongia-css": "github:inforgdev/spongia-css",
-    "vue": "^3.2.41",
+    "stylus": "^0.59.0",
+    "vue": "^3.2.45",
     "vue-router": "^4.1.6"
   }
 }
