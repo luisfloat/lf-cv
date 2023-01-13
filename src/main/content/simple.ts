@@ -1,9 +1,21 @@
+import { formatPhone } from "../helpers/formatPhone";
 import { SimpleContentType } from "./types";
 
 export { f } from "./factory.ts";
 export const langsAvailable = [ "enUs", "ptBr" ];
 
-export const content: SimpleContentType = (tl, f, lang) => ({
+export const content: SimpleContentType = (tl, f, lang) => {
+    const contact = {
+        address: f("Santa Catarina, Brazil", "Santa Catarina, Brasil"),
+        name: "Luís Fillipe Emidio",
+        phone: "+5547999216685",
+        email: f("contact@luisfloat.com", "contato@luisfloat.com"),
+        github: "github.com/luisfloat",
+        linkedin: "linkedin.com/in/luisfloat",
+        website: "luisfloat.com",
+    };
+
+    return {
     head: {
         title: f("Luis Float CV (en-us)", "Luis Float CV (pt-br)"),
     },
@@ -11,33 +23,33 @@ export const content: SimpleContentType = (tl, f, lang) => ({
         nav: {
             print: f("Print", "Imprimir"),
         },
-        contact: {
-            address: f("Santa Catarina, Brazil", "Santa Catarina, Brasil"),
-            name: "Luís Fillipe Emidio",
-            phone: "+5547999216685",
-            email: f("contact@luisfloat.com", "contato@luisfloat.com"),
-            github: "github.com/luisfloat",
-            linkedin: "linkedin.com/in/luisfloat",
-        },
+        contact,
         header: {
             title: "Luis Float",
             description: f("Web Developer", "Desenvolvedor Web"),
         },
         footer: {
             links: {
-                "E-mail": tl({
-                    enUs: { value: "contact@luisfloat.com", href: "mailto:contact@luisfloat.com" },
-                    ptBr: { value: "contato@luisfloat.com", href: "mailto:contato@luisfloat.com" },
-                }),
+                "E-mail": { value: contact.email, href: `mailto:${contact.email}` },
                 "GitHub": { value: "github.com/luisfloat", href: "https://github.com/luisfloat" },
-                "WhatsApp": { value: "+5547999216685", href: "tel:+5547999216685" },
+                "Website": { value: contact.website, href: `https://${contact.website}` },
             },
             generation: {
                 text: f("Generated on ", "Gerado em "),
                 timeFormat: f("MMMM Do, YYYY hh:mm:ss a", "MM/DD/YYYY HH:mm:ss"),
             },
         },
-        details: f("Details", "Detalhes"),
+        details: {
+            title: f("Details", "Detalhes"),
+            links: [
+                { type: "data", label: contact.address },
+                { type: "data", label: contact.name },
+                { type: "phone", domain: contact.phone, label: formatPhone(contact.phone) },
+                { type: "email", domain: contact.email, label: contact.email },
+                { type: "website", domain: contact.linkedin, label: contact.linkedin },
+                { type: "website", domain: contact.website, label: contact.website },
+            ],
+        },
         skills: {
             title: f("Skills", "Habilidades"),
             sep: " | ",
@@ -133,4 +145,5 @@ export const content: SimpleContentType = (tl, f, lang) => ({
             ],
         },
     },
-});
+    };
+};
