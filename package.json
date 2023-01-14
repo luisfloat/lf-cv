@@ -1,6 +1,6 @@
 {
   "name": "lf-cv",
-  "version": "0.8.1",
+  "version": "0.8.2",
   "description": "The curriculum generator for my personal curricula.",
   "main": "index.js",
   "scripts": {

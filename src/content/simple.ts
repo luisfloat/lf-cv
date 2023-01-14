@@ -53,15 +53,15 @@ export const content: SimpleContentType = (tl, f, lang) => {
         skills: {
             title: f("Skills", "Habilidades"),
             sep: " | ",
-            hard1: [ "JavaScript HTML CSS", "Bootstrap", "Stylus/SCSS", "Git", "HTTP", "Vue/React", "TypeScript", "Node.js", "Express", "MongoDB", "Linux" ],
-            hard2: [ "Agile", "Web App Audit", "REST", "Design Pattern" ],
+            hard1: [ "JavaScript", "HTML", "CSS", "Bootstrap", "Stylus", "SCSS", "Git", "HTTP", "Vue", "React", "TypeScript", "Node.js", "Express", "MongoDB", "Linux" ],
+            hard2: [ "Agile", "Web application audit", "RESTful APIs", "Design Patterns" ],
             soft1: tl({
                 enUs: [ "Problem solving", "Communication", "Adaptability", "Creativity", "Speed learning" ],
                 ptBr: [ "Resolução de problemas", "Comunicação", "Adaptabilidade", "Criatividade", "Aprendizagem rápida" ],
             }),
             soft2: tl({
-                enUs: [ "English B2+", "Portuguese N" ],
-                ptBr: [ "Inglês B2+", "Português N" ]
+                enUs: [ "English B2+", "Portuguese" ],
+                ptBr: [ "Inglês B2+", "Português" ]
             }),
         },
         edu: {
@@ -108,13 +108,13 @@ export const content: SimpleContentType = (tl, f, lang) => {
             items: [
                 {
                     role: f("Software Engineer", "Engenheiro de Software"),
-                    company: "Inforg Dev",
+                    company: "Inforg",
                     employmentType: f("Self-employed", "Autônomo"),
                     date: f("Mar 2022 - Present", "Mar 2022 - Presente"),
                     link: "https://inforg.dev",
                     description: tl({
                         enUs: "Engineering experimental software to help other software developers, both systems and applications.",
-                        ptBr: "Fazendo softwares experimentais para ajudar outros desenvolvedores de software, tanto de sistemas quanto de aplicações, desenvolvendo bibliotecas, utilitários e mais.",
+                        ptBr: "Desenvolvendo softwares experimentais para ajudar outros desenvolvedores de software, tanto de sistemas quanto de aplicações, desenvolvendo bibliotecas, utilitários e mais.",
                     }),
                     skills: "Node.js | JavaScript | Git | HTML | CSS | ...",
                 },
