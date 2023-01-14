@@ -2,7 +2,8 @@ import vue from "@vitejs/plugin-vue";
 import vueJsx from "@vitejs/plugin-vue-jsx";
 
 export default {
-    root: "src/main/",
+    root: "src/",
+    publicDir: "assets/",
     css: {
         preprocessorOptions: {
             stylus: {
@@ -11,7 +12,7 @@ export default {
         },
     },
     build: {
-        outDir: "../../dist/web/",
+        outDir: "../dist/web/",
         emptyOutDir: true,
     },
     plugins: [

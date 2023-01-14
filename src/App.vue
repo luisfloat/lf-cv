@@ -2,7 +2,7 @@
 import { useCssModule } from "vue";
 import { useRouter } from "vue-router";
 import { useContent } from "./composables/useContent";
-import globalStyle from "./style/index.styl?inline";
+import globalStyle from "./styles/index.styl?inline";
 
 const content = useContent();
 const classes = useCssModule();
