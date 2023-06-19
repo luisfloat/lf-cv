@@ -27,7 +27,7 @@ function render() {
 <style module lang="stylus">
 .items {
     li {
-        line-height: 1.2;
+        line-height: 1.1;
     }    
 }
 </style>

@@ -23,8 +23,8 @@ function render() {
                 <h4 class={classes.headline}>
                     <a href={link} target="_blank" class={classes.headline__company}>{ company }</a>
                     <span class={classes.headline__employmentType}>{ employmentType }</span>
+                    <span class={classes.header__date}>({ date })</span>
                 </h4>
-                <h4 class={classes.header__date}>{ date }</h4>
             </div>
             { description ? <p class={classes.description}>{ description }</p> : "" }
             <p class={classes.skills}>{ skills }</p>
@@ -57,6 +57,8 @@ function render() {
 .headline {
     color: color-gray-4;
     font-size: 11pt;
+    display: flex;
+    gap: 2pt;
 
     &__company {
         color: color-gray-3;
@@ -69,17 +71,7 @@ function render() {
         font-weight: 400;
         font-size: 9pt;
         color: color-gray-3;
-        margin-left: 3ch;
         position: relative;
-
-        &::before {
-            content: "-";
-            top: 0;
-            left: -2ch;
-            width: 100%;
-            height: 100%;
-            position: absolute;
-        }
     }
 }
 

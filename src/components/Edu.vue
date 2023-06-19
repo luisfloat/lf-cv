@@ -25,13 +25,13 @@ function render() {
     font-size: 9pt;
     color: color-gray-3;   
 
-    margin-top: 6pt; 
+    margin-top: 2pt;
 }
 
 .footerText {
     font-size: 9pt;
     color: color-gray-2;   
 
-    margin-top: 12pt; 
+    margin-top: 6pt; 
 }
 </style>

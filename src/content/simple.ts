@@ -53,8 +53,11 @@ export const content: SimpleContentType = (tl, f, lang) => {
         skills: {
             title: f("Skills", "Habilidades"),
             sep: " | ",
-            hard1: [ "JavaScript", "HTML", "CSS", "Bootstrap", "Stylus", "SCSS", "Git", "HTTP", "Vue", "React", "TypeScript", "Node.js", "Express", "MongoDB", "Linux" ],
-            hard2: [ "Agile", "Web application audit", "RESTful APIs", "Design Patterns" ],
+            hard1: [ "JavaScript", "React", "React Hooks", "Context API", "Vue", "HTTP", "TypeScript", "HTML", "CSS", "Bootstrap", "Vite", "Stylus", "Sass", "Git", "GitHub", "Node.js" ],
+            hard2: tl({
+                enUs: [ "Programming Logic", "Agile Methodologies", "Responsive Design", "Consumption of RESTful APIs", "Design Patterns" ],
+                ptBr: [ "Lógica de Programação", "Metodologias Ágeis", "Design Responsivo", "Consumo de RESTful APIs", "Design Patterns" ],
+            }),
             soft1: tl({
                 enUs: [ "Problem solving", "Communication", "Adaptability", "Creativity", "Speed learning" ],
                 ptBr: [ "Resolução de problemas", "Comunicação", "Adaptabilidade", "Criatividade", "Aprendizagem rápida" ],
@@ -92,31 +95,31 @@ export const content: SimpleContentType = (tl, f, lang) => {
         hobby: {
             title: f("Interests", "Interesses"),
             headline: tl({
-                enUs: [ "Technology", "Scifi", "Linguistics", "Philosophy" ],
-                ptBr: [ "Tecnologia", "Scifi", "Linguística", "Filosofia" ],
+                enUs: [ "Future", "Scifi", "Linguistics", "Philosophy" ],
+                ptBr: [ "Futuro", "Scifi", "Linguística", "Filosofia" ],
             }),
         },
         about: {
             title: f("About", "Sobre"),
             text: tl({
-                enUs: "I am a full stack web developer with proficiency in the JavaScript ecosystem. Having the ability to learn quickly and being self-taught, I always keep up to date with the latest technologies. In addition, I have the ability to organize myself individually and also as a team to solve the most diverse problems.",
-                ptBr: "Sou um desenvolvedor web full stack com proficiência no ecosistema JavaScript. Tendo a capacidade de aprender rapidamente e sendo autodidata, mantenho-me sempre atualizado com as mais recentes tecnologias. Além disso, tenho a habilidade de me organizar individualmente e também em equipe para solucionar os mais diversos problemas."
+                enUs: "I'm a self-taught web developer proficient in the JavaScript ecosystem. I have a genuine passion for continuous learning and staying up to date with the latest technology. In addition, I have a deep fascination with the future and the infinite possibilities for innovation it brings.",
+                ptBr: "Sou um desenvolvedor web autodidata proficiente no ecossistema JavaScript. Tenho uma paixão genuína pelo aprendizado contínuo e por me manter atualizado com as tecnologias mais recentes. Além disso, tenho um profundo fascínio pelo futuro e pelas infinitas possibilidades de inovação que ele traz."
             }),
         },
         experience: {
             title: f("Experience", "Experiência"),
             items: [
                 {
-                    role: f("Software Engineer", "Engenheiro de Software"),
-                    company: "Inforg",
-                    employmentType: f("Self-employed", "Autônomo"),
-                    date: f("Mar 2022 - Present", "Mar 2022 - Presente"),
-                    link: "https://inforg.dev",
+                    role: f("Software Developer", "Desenvolvedor de Software"),
+                    company: "BeeSix Soluções",
+                    employmentType: "Full-time",
+                    date: "Fev 2023 - Jun 2023",
+                    link: "https://www.beesix.com.br/",
                     description: tl({
-                        enUs: "Engineering experimental software to help other software developers, both systems and applications.",
-                        ptBr: "Desenvolvendo softwares experimentais para ajudar outros desenvolvedores de software, tanto de sistemas quanto de aplicações, desenvolvendo bibliotecas, utilitários e mais.",
+                        enUs: "Providing software development services such as bug fixes, code refactoring and new feature implementation, including creation of a user account page and a module for editing and PDF generation.",
+                        ptBr: "Fornecimento serviços de desenvolvimento de software, como correções de bugs, refatoração de código e implementação de novas funcionalidades, incluindo criação de uma página de conta de usuário e um módulo para edição e geração de PDF.",
                     }),
-                    skills: "Node.js | JavaScript | Git | HTML | CSS | ...",
+                    skills: "JavaScript | Git | React | HTML | styled-components | Node.js | Express | ...",
                 },
                 {
                     role: f("Web Developer", "Desenvolvedor Web"),
@@ -128,7 +131,19 @@ export const content: SimpleContentType = (tl, f, lang) => {
                         enUs: "Installation, maintenance, configuration and creation of websites such as landing page and/or e-commerce.",
                         ptBr: "Instalação, manutenção, configuração e criação de sites como landing page e/ou e-commerce.",
                     }),
-                    skills: "HTML | CSS | MySQL | WordPress | Woo | ...",
+                    skills: "JavaScript | React | Node.js | Express | WordPress | HTML | CSS | MySQL | Vite | ...",
+                },
+                {
+                    role: f("Software Developer", "Desenvolvedor de Software"),
+                    company: "Inforg",
+                    employmentType: f("Self-employed", "Autônomo"),
+                    date: f("Mar 2022 - Feb 2023", "Mar 2022 - Fev 2023"),
+                    link: "https://inforg.dev",
+                    description: tl({
+                        enUs: "Engineering experimental software to help other software developers, both systems and applications.",
+                        ptBr: "Desenvolvendo ideias, experimentos e possíveis soluções no desenvolvimento de software, incluindo bibliotecas, utilitários e muito mais.",
+                    }),
+                    skills: "Node.js | JavaScript | Git | HTML | CSS | ...",
                 },
                 {
                     role: f("Software Developer", "Desenvolvedor de Software"),
@@ -137,10 +152,10 @@ export const content: SimpleContentType = (tl, f, lang) => {
                     date: f("Jan 2020 - Present", "Jan 2020 - Presente"),
                     link: "https://luisfloat.com",
                     description: tl({
-                        enUs: "Development of personal projects, such as my curriculum generator, my readme, my portfolio, etc.",
-                        ptBr: "Desenvolvimento de projetos pessoais, como meu gerador de currículo, meu readme, meu portfólio, etc.",
+                        enUs: "Development of personal projects, such as website, curriculum generator, portfolio, and more.",
+                        ptBr: "Desenvolvimento de projetos pessoais, como site, gerador de currículo, portfólio, entre outros.",
                     }),
-                    skills: "Vue | React | Bootstrap | Nest.js | Git | ...",
+                    skills: "JavaScript | Vue | React | Bootstrap | Nest.js | Git | ...",
                 },
             ],
         },

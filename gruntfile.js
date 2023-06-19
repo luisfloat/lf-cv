@@ -10,7 +10,7 @@ var config = {
     },
     pdf: {
         src: "http://localhost:4173/$lang",
-        dist: "dist/print/Luis Float CV ($lang).pdf",
+        dist: "dist/print/Luis (Float) Emidio CV - $lang.pdf",
     },
 };
 
