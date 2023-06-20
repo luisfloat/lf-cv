@@ -1,18 +1,12 @@
-<script lang="tsx" setup>
+<script setup lang="ts">
 import { useContent } from "../composables/useContent";
 
-const content = useContent();
-
-function render() {
-    const { title, text } = content.value.body?.about;
-
-    return (
-        <div class="section section--aside">
-            <h2 class="section__title">{ title }</h2>
-            <p class="section__text">{ text }</p>
-        </div>
-    );
-}
+const about = useContent(s => s.body.about);
 </script>
 
-<template><render/></template>
+<template>
+    <div class="section section--aside">
+        <h2 class="section__title">{{ about.title }}</h2>
+        <p class="section__text">{{ about.text }}</p>
+    </div>
+</template>

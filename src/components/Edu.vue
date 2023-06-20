@@ -1,24 +1,18 @@
-<script lang="tsx" setup>
+<script setup lang="ts">
 import { useCssModule } from "vue";
 import { useContent } from "../composables/useContent";
 
 const classes = useCssModule();
-const content = useContent();
-
-function render() {
-    const { title, items, footerText } = content.value.body?.edu;
-    
-    return (
-        <div class="section section--main">
-            <h2 class="section__title">{ title }</h2>
-            { items.map((item: any) => <p class={classes.item}>{ item }</p>) }
-            <p class={classes.footerText}>{ footerText }</p>
-        </div>
-    );
-}
+const education = useContent(s => s.body.edu);
 </script>
 
-<template><render/></template>
+<template>
+    <div class="section section--main">
+        <h2 class="section__title">{{ education.title }}</h2>
+        <p :class="classes.item" v-for="item in education.items">{{ item }}</p>
+        <p :class="classes.footerText">{{ education.footerText }}</p>
+    </div>
+</template>
 
 <style module lang="stylus">
 .item {

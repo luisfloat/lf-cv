@@ -1,5 +1,5 @@
-<script lang="tsx" setup>
-import { useCssModule } from "vue";
+<script setup lang="ts">
+import { computed, useCssModule } from "vue";
 import { formatPhone } from "../helpers/formatPhone";
 
 const classes = useCssModule();
@@ -8,36 +8,36 @@ const props = defineProps<{
     obj: any,
 }>();
 
-function render() {
-    const label = props.label;
-    let { value, href } = props.obj;
+const anchorTypes = {
+    "mailto:": "in",
+    "https:": "ex",
+    "tel:": "in",
+};
 
-    const protoc = new URL(href).protocol;
-    value = protoc === "tel:" ? formatPhone(value) : value;
-    
-    const anchorTypes = {
-        "mailto:": "in",
-        "https:": "ex",
-        "tel:": "in",
-    };
-    const anchorType = anchorTypes[protoc] || "none";
+const link = computed<any>(() => {
+    const { href, value } = props.obj;
+    const protocol = new URL(href).protocol;
+    const anchorType = anchorTypes[protocol] || "none";
 
-    const linkAttrs = {
+    const attrs = {
         href,
         target: "_blank",
         class: `${classes.link__a} link--${anchorType}`,
     };
 
-    return (
-        <div class={classes.link}>
-            <div class={classes.link__label}>{ label }</div>
-            <a {...linkAttrs}>{ value }</a>
-        </div>
-    );
-}
+    return {
+        attrs,
+        value: protocol === "tel:" ? formatPhone(value) : value,
+    };
+});
 </script>
 
-<template><render/></template>
+<template>
+    <div :class="classes.link">
+        <div :class="classes.link__label">{{ props.label }}</div>
+        <a v-bind="link.attrs">{{ link.value }}</a>
+    </div>
+</template>
 
 <style module lang="stylus">
 .link {

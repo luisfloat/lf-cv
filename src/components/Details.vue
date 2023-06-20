@@ -1,28 +1,22 @@
-<script lang="tsx" setup>
+<script setup lang="ts">
 import { useCssModule } from "vue";
 import { useContent } from "../composables/useContent";
 import DetailsItem from "./DetailsItem.vue";
 
 const classes = useCssModule();
-const content = useContent();
-
-function render() {
-    const { title, links } = content.value.body.details;
-
-    return (
-        <div class="section section--aside">
-            <h2 class="section__title">{ title }</h2>
-            <nav>
-                <ul class={classes.items}>
-                    { links.map((o) => <DetailsItem {...o}/>) }
-                </ul>
-            </nav>
-        </div>
-    );
-}
+const details = useContent(s => s.body.details);
 </script>
 
-<template><render/></template>
+<template>
+    <div class="section section--aside">
+        <h2 class="section__title">{{ details.title }}</h2>
+        <nav>
+            <ul :class="classes.items">
+                <DetailsItem v-for="link in details.links" v-bind="link" />
+            </ul>
+        </nav>
+    </div>
+</template>
 
 <style module lang="stylus">
 .items {

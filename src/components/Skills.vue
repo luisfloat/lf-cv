@@ -1,27 +1,19 @@
-<script lang="tsx" setup>
+<script setup lang="ts">
 import { useContent } from "../composables/useContent";
 import VBarList from "./VBarList.vue";
 
-const content = useContent();
-
-function render() {
-    const body = content.value.body;
-    const { title, hard1, hard2, soft1, soft2 } = body?.skills;
-    const sep = body?.skills?.sep;
-
-    return (
-        <div class="section section--aside">
-            <h2 class="section__title">{ title }</h2>
-            <VBarList items={hard1} sep={sep} type="primary"/>
-            <VBarList items={hard2} sep={sep} type="normal"/>
-            <VBarList items={soft1} sep={sep} type="normal"/>
-            <VBarList items={soft2} sep={sep} type="primary"/>
-        </div>
-    );
-}
+const content = useContent(s => s.body.skills);
 </script>
 
-<template><render/></template>
+<template>
+    <div class="section section--aside">
+        <h2 class="section__title">{{ content.title }}</h2>
+        <VBarList :items="content.hard1" :sep="content.sep" type="primary" />
+        <VBarList :items="content.hard2" :sep="content.sep" type="normal" />
+        <VBarList :items="content.soft1" :sep="content.sep" type="normal" />
+        <VBarList :items="content.soft2" :sep="content.sep" type="primary" />
+    </div>
+</template>
 
 <style module lang="stylus">
 .skills {

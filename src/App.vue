@@ -1,42 +1,36 @@
-<script lang="tsx" setup>
+<script setup lang="ts">
 import { useCssModule } from "vue";
 import { useRouter } from "vue-router";
 import { useContent } from "./composables/useContent";
-import globalStyle from "./styles/index.styl?inline";
+import "./styles/index.styl";
 
 const content = useContent();
 const classes = useCssModule();
 
-function render() {
-    const router = useRouter();
-    const route = router.currentRoute;
-    const routes = [
-        { to: "en-us", label: "en-us" },
-        { to: "pt-br", label: "pt-br" },
-    ];
-    
-    const activeRoute = (routeName) => route.value.params.lang === routeName ? classes.isActive : "";
+const routes = [
+    { to: "en-us", label: "en-us" },
+    { to: "pt-br", label: "pt-br" },
+];
 
-    const routerLink = (route: any) => (
-        <router-link to={route.to} class={`${classes.nav__link} ${activeRoute(route.to)}`}>{ route.label }</router-link>
-    );
+const router = useRouter();
 
-    return (
-        <>
-            <style>{ globalStyle }</style>
-            <div class={classes.nav}>
-                <button class={classes.print} onClick={() => print()}>
-                    {content.value.body.nav.print}
-                </button>
-                {routes.map((o: any) => routerLink(o))}
-            </div>
-            <router-view />
-        </>
-    );
-}
+const isActiveRoute = (routeName: string) => router.currentRoute.value.params.lang === routeName;
+const print = () => window.print;
 </script>
 
-<template><render/></template>
+<template>
+    <div :class="classes.nav">
+        <button :class="classes.print" @click="print">
+            {{ content.body.nav.print }}
+        </button>
+        <template v-for="route in routes">
+            <RouterLink :to="route.to" :class="{ [classes.nav__link]: true, [classes.isActive]: isActiveRoute(route.to) }">
+                {{ route.label }}
+            </RouterLink>
+        </template>
+    </div>
+    <RouterView />
+</template>
 
 <style module lang="stylus">
 .print {

@@ -1,27 +1,19 @@
-<script lang="tsx" setup>
+<script setup lang="ts">
+import { toRefs } from 'vue';
+
 const props = defineProps<{
     items: Array<Object>,
     sep: string,
     type: string,
 }>();
-
-function render() {
-    const { items, type, sep } = props;
-
-    return (
-        <p class="p">
-            { items.map(
-                (item, i) => <>
-                    { type == "primary" ?
-                        <span class="vbar-list__item vbar-list__item--primary">{ item }</span> :
-                        <span class="vbar-list__item">{ item }</span>
-                    }
-                    { i !== items.length - 1 ? <span class="vbar-list__sep">{ sep }</span> : "" }
-                </>
-            )}
-        </p>
-    );
-}
+const { items, type, sep } = toRefs(props);
 </script>
 
-<template><render/></template>
+<template>
+    <p class="p">
+        <template v-for="(item, i) in items">
+            <span class="vbar-list__item" :class="{ 'vbar-list__item--primary': type === 'primary' }">{{ item }}</span>
+            <span class="vbar-list__sep" v-if="i !== items.length - 1">{{ sep }}</span>
+        </template>
+    </p>
+</template>

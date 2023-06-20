@@ -1,41 +1,33 @@
-<script lang="tsx" setup>
-import { useCssModule } from "vue";
+<script setup lang="ts">
+import { useCssModule, computed } from "vue";
 import { useContent } from "../composables/useContent";
 import FooterLink from "./FooterLink.vue";
 import moment from "moment";
 
 const classes = useCssModule();
-const content = useContent();
+const content = useContent(s => s.body.footer);
 
-function render() {
-    const body = content.value.body;
-    const { generation, links } = body?.footer;
+const linkAttrs = (k: string) => ({ label: k, obj: content.value.links[k] });
 
-    const linkAttrs = (k: string) => ({ label: k, obj: links[k] });
-
-    moment.locale(generation.locale);
-    const generatedTime = moment().format(generation.timeFormat);
-
-    return (
-        <div class="section section--footer">
-            <div class={classes.links}>
-                {Object.keys(links).map((k: string) => <FooterLink {...linkAttrs(k)}/>)}
-            </div>
-            <div class={classes.logo}>
-                <img class={classes.logo__image} src="img/logo.png" alt="Logo" />
-            </div>
-            <div class={classes.generation}>
-                <div
-                    class={classes.generation__text}
-                    data-content={generation.text + generatedTime}>
-                </div>
-            </div>
-        </div>
-    );
-}
+const generatedTime = computed(() => {
+    moment.locale(content.value.generation.locale);
+    return moment().format(content.value.generation.timeFormat);
+});
 </script>
 
-<template><render/></template>
+<template>
+    <div class="section section--footer">
+        <div :class="classes.links">
+            <FooterLink v-bind="linkAttrs(k)" v-for="k in Object.keys(content.links)" />
+        </div>
+        <div :class="classes.logo">
+            <img :class="classes.logo__image" src="img/logo.png" alt="Logo" />
+        </div>
+        <div :class="classes.generation">
+            <div :class="classes.generation__text" :data-content="content.generation.text + generatedTime" />
+        </div>
+    </div>
+</template>
 
 <style module lang="stylus">
 .links {

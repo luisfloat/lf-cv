@@ -1,32 +1,42 @@
 import { computed } from "vue";
 import { useRoute } from "vue-router";
-import { langsAvailable, content, f } from "../content/simple";
+import { content, f, langsAvailable } from "../content/simple";
 import { SimpleLangType } from "../content/types";
 import { toCamel } from "../helpers/toCamel";
 
-export function translate(langsAvailable: Array<string>, lang: string, obj: object) {
-    lang = toCamel(lang);
+export function translate(
+  langsAvailable: Array<string>,
+  lang: string,
+  obj: object
+) {
+  lang = toCamel(lang);
 
-    if(!langsAvailable.includes(lang)) {
-        lang = "enUs";
-    }
+  if (!langsAvailable.includes(lang)) {
+    lang = "enUs";
+  }
 
-    let text = obj[lang];
-    if(!text) text = "NO_TRANSLATION_FOUND";
+  let text = obj[lang];
+  if (!text) text = "NO_TRANSLATION_FOUND";
 
-    return text;
+  return text;
 }
 
-export function useContent() {
-    const route = useRoute();
-    const lang = computed<string>(() => route.params.lang as string);
+export function useContent(getter?: (value: any) => any) {
+  const route = useRoute();
 
-    const tl = (obj: object) => translate(langsAvailable, lang.value, obj);
+  const reactiveContent = computed(() => {
+    const lang = route.params.lang as string;
+    const tl = (obj: object) => translate(langsAvailable, lang, obj);
+    const factory = (enUs, ptBr) => f(tl, enUs, ptBr);
 
-    const curContent = computed(() => {
-        const factory = (enUs, ptBr) => f(tl, enUs, ptBr);
-        return content(tl, factory, lang.value as SimpleLangType);
-    });
-    
+    const curContent = content(tl, factory, lang as SimpleLangType);
+
     return curContent;
+  });
+
+  if (typeof getter === "function") {
+    return computed(() => getter(reactiveContent.value));
+  }
+
+  return reactiveContent;
 }

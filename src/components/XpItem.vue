@@ -1,5 +1,5 @@
-<script lang="tsx" setup>
-import { useCssModule } from 'vue';
+<script setup lang="ts">
+import { toRefs, useCssModule } from 'vue';
 
 const classes = useCssModule();
 
@@ -12,28 +12,21 @@ const props = defineProps<{
     description: string,
     skills: string,
 }>();
-
-function render() {
-    const { role, link, company, employmentType, date, description, skills } = props;
-    
-    return (
-        <>
-            <div class={classes.header}>
-                <h3 class={classes.header__role}>{ role }</h3>
-                <h4 class={classes.headline}>
-                    <a href={link} target="_blank" class={classes.headline__company}>{ company }</a>
-                    <span class={classes.headline__employmentType}>{ employmentType }</span>
-                    <span class={classes.header__date}>({ date })</span>
-                </h4>
-            </div>
-            { description ? <p class={classes.description}>{ description }</p> : "" }
-            <p class={classes.skills}>{ skills }</p>
-        </>
-    );
-}
+const { role, link, company, employmentType, date, description, skills } = toRefs(props);
 </script>
 
-<template><render/></template>
+<template>
+    <div :class="classes.header">
+        <h3 :class="classes.header__role">{{ role }}</h3>
+        <h4 :class="classes.headline">
+            <a :href="link" target="_blank" :class="classes.headline__company">{{ company }}</a>
+            <span :class="classes.headline__employmentType">{{ employmentType }}</span>
+            <span :class="classes.header__date">({{ date }})</span>
+        </h4>
+    </div>
+    <p :class="classes.description" v-if="description">{{ description }}</p>
+    <p :class="classes.skills">{{ skills }}</p>
+</template>
 
 <style module lang="stylus">
 .header {

@@ -1,20 +1,15 @@
-<script lang="tsx" setup>
+<script setup lang="ts">
+import { computed } from "vue";
 import { useContent } from "../composables/useContent";
 import VBarList from "./VBarList.vue";
 
-const content = useContent();
-
-function render() {
-    const body = content.value.body;
-    const { title, headline } = body?.hobby;
-
-    return (
-        <div class="section section--aside">
-            <h2 class="section__title">{ title }</h2>
-            <VBarList items={headline} sep={body?.skills?.sep} type="normal"/>
-        </div>
-    );
-}
+const bodyContent = useContent(s => s.body);
+const content = computed(() => bodyContent.value.hobby);
 </script>
 
-<template><render/></template>
+<template>
+    <div class="section section--aside">
+        <h2 class="section__title">{{ content.title }}</h2>
+        <VBarList :items="content.headline" :sep="bodyContent?.skills?.sep" type="normal" />
+    </div>
+</template>

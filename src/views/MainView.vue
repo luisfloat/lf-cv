@@ -1,4 +1,5 @@
-<script lang="tsx" setup>
+<script setup lang="ts">
+import { watch } from "vue";
 import About from "../components/About.vue";
 import Details from "../components/Details.vue";
 import Edu from "../components/Edu.vue";
@@ -11,31 +12,27 @@ import { useContent } from "../composables/useContent";
 
 const content = useContent();
 
-function render() {
+watch(content, () => {
     document.head.getElementsByTagName("title")[0].innerHTML = content.value.head.title;
-
-    return (
-        <>
-            <div class="body">
-                <div class="body__sidebar">
-                    <Header/>
-                    <About/>
-                    <Details/>
-                    <Skills/>
-                    <Hobby/>
-                </div>
-                <div class="body__main">
-                    <Xp/>
-                    <Edu/>
-                </div>
-            </div>
-
-            <div class="footer">
-                <Footer/>
-            </div>
-        </>
-    );
-};
+});
 </script>
 
-<template><render/></template>
+<template>
+    <div class="body">
+        <div class="body__sidebar">
+            <Header />
+            <About />
+            <Details />
+            <Skills />
+            <Hobby />
+        </div>
+        <div class="body__main">
+            <Xp />
+            <Edu />
+        </div>
+    </div>
+
+    <div class="footer">
+        <Footer />
+    </div>
+</template>

@@ -1,32 +1,35 @@
 
-<script lang="tsx" setup>
-const props = defineProps<{
+<script setup lang="ts">
+import { computed, toRefs } from 'vue';
+
+type DetailsItem = {
     type: "website" | "phone" | "email" | "data",
     label?: string,
     domain?: string,
-}>();
+};
+const props = defineProps<DetailsItem>();
+const { type, domain, label } = toRefs(props);
 
-function render() {
-    const { type, domain, label } = props;
+const types = {
+    website: ["https", "ex"],
+    phone: ["tel", "in"],
+    email: ["mailto", "in"],
+    data: [undefined, "none"],
+};
 
-    const types = {
-        website: [ "https", "ex" ],
-        phone: [ "tel", "in" ],
-        email: [ "mailto", "in" ],
-        data: [ undefined, "none" ],
+const linkAttrs = computed(() => {
+    const [protocol, className] = types[type.value];
+    const href = protocol ? `${protocol}:${domain.value}` : undefined;
+    const target = type.value === "website" ? "_blank" : undefined;
+
+    return {
+        class: `link--${className}`,
+        href,
+        target,
     };
-
-    const cur = types[type];
-    const linkAttrs: any = {
-        class: "link--" + cur[1],
-        href: cur[0] ? `${cur[0]}:${domain}` : undefined,
-        target: type == "website" ? "_blank" : undefined,
-    };
-
-    return (
-        <li><a {...linkAttrs}>{ label }</a></li>
-    );
-}
+});
 </script>
 
-<template><render/></template>
+<template>
+    <li><a v-bind="linkAttrs">{{ label }}</a></li>
+</template>

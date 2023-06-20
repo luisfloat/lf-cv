@@ -1,23 +1,17 @@
-<script lang="tsx" setup>
+<script setup lang="ts">
 import { useCssModule } from 'vue';
 import { useContent } from '../composables/useContent';
 
 const classes = useCssModule();
-const content = useContent();
-
-function render() {
-    const { title, description } = content.value.body?.header;
-
-    return (
-        <div class="section section--header">
-            <h1 class="section__title section__title--header">{ title }</h1>
-            <div class={classes.description}>{ description }</div>
-        </div>
-    );
-}
+const content = useContent(s => s.body.header);
 </script>
 
-<template><render/></template>
+<template>
+    <div class="section section--header">
+        <h1 class="section__title section__title--header">{{ content.title }}</h1>
+        <div :class="classes.description">{{ content.description }}</div>
+    </div>
+</template>
 
 <style module lang="stylus">
 .description {
