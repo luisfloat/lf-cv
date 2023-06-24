@@ -7,10 +7,10 @@ const content = useContent(s => s.body.header);
 </script>
 
 <template>
-    <div class="section section--header">
+    <header class="section section--header">
         <h1 class="section__title section__title--header">{{ content.title }}</h1>
         <div :class="classes.description">{{ content.description }}</div>
-    </div>
+    </header>
 </template>
 
 <style module lang="stylus">

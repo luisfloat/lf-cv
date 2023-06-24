@@ -8,18 +8,22 @@ const details = useContent(s => s.body.details);
 </script>
 
 <template>
-    <div class="section section--aside">
+    <section class="section section--aside">
         <h2 class="section__title">{{ details.title }}</h2>
-        <nav>
-            <ul :class="classes.items">
-                <DetailsItem v-for="link in details.links" v-bind="link" />
-            </ul>
-        </nav>
-    </div>
+        <ul :class="classes.items">
+            <li v-for="link in details.links">
+                <DetailsItem v-bind="link" />
+            </li>
+        </ul>
+    </section>
 </template>
 
 <style module lang="stylus">
 .items {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
     li {
         line-height: 1.1;
     }    

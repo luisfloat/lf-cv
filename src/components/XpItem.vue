@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { toRefs, useCssModule } from 'vue';
+import VBarList from './VBarList.vue';
 
 const classes = useCssModule();
 
@@ -16,35 +17,32 @@ const { role, link, company, employmentType, date, description, skills } = toRef
 </script>
 
 <template>
-    <div :class="classes.header">
-        <h3 :class="classes.header__role">{{ role }}</h3>
+    <div>
+        <h3 :class="classes.role">{{ role }}</h3>
         <h4 :class="classes.headline">
             <a :href="link" target="_blank" :class="classes.headline__company">{{ company }}</a>
+            ·
             <span :class="classes.headline__employmentType">{{ employmentType }}</span>
-            <span :class="classes.header__date">({{ date }})</span>
+            <span :class="classes.date">({{ date }})</span>
         </h4>
+        <p :class="classes.description" v-if="description">{{ description }}</p>
+        <p :class="classes.skills">
+            {{ skills }}
+        </p>
     </div>
-    <p :class="classes.description" v-if="description">{{ description }}</p>
-    <p :class="classes.skills">{{ skills }}</p>
 </template>
 
 <style module lang="stylus">
-.header {
-    &:not(:first-child) {
-        margin-top: 10pt;
-    }
+.role {
+    font-size: 10pt;
+    color: color-azure-4;
+    text-decoration: none;
+}
 
-    &__role {
-        font-size: 10pt;
-        color: color-azure-4;
-        text-decoration: none;
-    }
-
-    &__date {
-        font-weight: 400;
-        font-size: 9pt;
-        color: color-gray-4;
-    }
+.date {
+    font-weight: 400;
+    font-size: 9pt;
+    color: color-gray-4;
 }
 
 .headline {
@@ -52,6 +50,7 @@ const { role, link, company, employmentType, date, description, skills } = toRef
     font-size: 11pt;
     display: flex;
     gap: 2pt;
+    align-items: center;
 
     &__company {
         color: color-gray-3;

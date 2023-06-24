@@ -16,23 +16,28 @@ const generatedTime = computed(() => {
 </script>
 
 <template>
-    <div class="section section--footer">
-        <div :class="classes.links">
-            <FooterLink v-bind="linkAttrs(k)" v-for="k in Object.keys(content.links)" />
-        </div>
+    <footer class="section section--footer">
+        <ul :class="classes.links">
+            <li v-for="k in Object.keys(content.links)">
+                <FooterLink v-bind="linkAttrs(k)" />
+            </li>
+        </ul>
         <div :class="classes.logo">
             <img :class="classes.logo__image" src="img/logo.png" alt="Logo" />
         </div>
         <div :class="classes.generation">
             <div :class="classes.generation__text" :data-content="content.generation.text + generatedTime" />
         </div>
-    </div>
+    </footer>
 </template>
 
 <style module lang="stylus">
 .links {
     width: 100%;
     z-index: 1;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .logo {

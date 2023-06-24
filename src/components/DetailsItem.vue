@@ -31,5 +31,5 @@ const linkAttrs = computed(() => {
 </script>
 
 <template>
-    <li><a v-bind="linkAttrs">{{ label }}</a></li>
+    <div><a v-bind="linkAttrs">{{ label }}</a></div>
 </template>

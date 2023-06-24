@@ -8,8 +8,8 @@ const content = computed(() => bodyContent.value.hobby);
 </script>
 
 <template>
-    <div class="section section--aside">
+    <section class="section section--aside">
         <h2 class="section__title">{{ content.title }}</h2>
         <VBarList :items="content.headline" :sep="bodyContent?.skills?.sep" type="normal" />
-    </div>
+    </section>
 </template>

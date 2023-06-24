@@ -40,7 +40,7 @@ export const content: SimpleContentType = (tl, f, lang) => {
             },
         },
         details: {
-            title: f("Details", "Detalhes"),
+            title: f("Personal Info", "Dados Pessoais"),
             links: [
                 { type: "data", label: contact.address },
                 { type: "data", label: contact.name },
@@ -52,7 +52,7 @@ export const content: SimpleContentType = (tl, f, lang) => {
         },
         skills: {
             title: f("Skills", "Habilidades"),
-            sep: " | ",
+            sep: "·",
             hard1: [ "JavaScript", "React", "React Hooks", "Context API", "Vue", "HTTP", "TypeScript", "HTML", "CSS", "Bootstrap", "Vite", "Stylus", "Sass", "Git", "GitHub", "Node.js" ],
             hard2: tl({
                 enUs: [ "Programming Logic", "Agile Methodologies", "Responsive Design", "Consumption of RESTful APIs", "Design Patterns" ],
@@ -63,34 +63,20 @@ export const content: SimpleContentType = (tl, f, lang) => {
                 ptBr: [ "Resolução de problemas", "Comunicação", "Adaptabilidade", "Criatividade", "Aprendizagem rápida" ],
             }),
             soft2: tl({
-                enUs: [ "English B2+", "Portuguese" ],
-                ptBr: [ "Inglês B2+", "Português" ]
+                enUs: [ "English Intermediate", "Native Portuguese" ],
+                ptBr: [ "Inglês Intermediário", "Português Nativo" ]
             }),
         },
         edu: {
             title: f("Education", "Educação"),
-            items: tl({
-                enUs: [
-                    "- Programming Logic with JavaScript, SENAI/SC, ODL, 2022/2022",
-                    "- Programming Front-end Basics, SENAI/SC, ODL, 2022/2022",
-                    "- Programming Back-end Basics, SENAI/SC, ODL, 2022/2022",
-                    "- Cloud Computing, SENAI/SC, ODL, 2022/2022",
-                    "- User Experience - Digital Interfaces, SENAI/SC, ODL, 2022/2022",
-                    "- Technical English Notions, SENAI/SC, ODL, 2022/2022"
-                ],
-                ptBr: [
-                    "- Lógica de Programação com JavaScript, SENAI/SC, EAD, 2022/2022",
-                    "- Programação Básica em Front-End, SENAI/SC, EAD, 2022/2022",
-                    "- Programação Básica em Back-End, SENAI/SC, EAD, 2022/2022",
-                    "- Computação em Nuvem, SENAI/SC, EAD, 2022/2022",
-                    "- User Experience - Interfaces Digitais, SENAI/SC, EAD, 2022/2022",
-                    "- Noções de Inglês Técnico, SENAI/SC, EAD, 2022/2022",
-                ],
-            }),
-            footerText: tl({
-                enUs: "- Software development, free online resources",
-                ptBr: "- Desenvolvimento de Software, recursos gratuitos online",
-            }),
+            items: [
+                { title: f("Programming Logic with JavaScript", "Lógica de Programação com JavaScript"), org: "SENAI/SC", startTime: "2022", endTime: "2022" },
+                { title: f("Programming Front-end Basics", "Programação Básica em Front-End"), org: "SENAI/SC", startTime: "2022", endTime: "2022" },
+                { title: f("Programming Back-end Basics", "Programação Básica em Back-End"), org: "SENAI/SC", startTime: "2022", endTime: "2022" },
+                { title: f("Cloud Computing", "Computação em Nuvem"), org: "SENAI/SC", startTime: "2022", endTime: "2022" },
+                { title: f("User Experience - Digital Interfaces", "User Experience - Interfaces Digitais"), org: "SENAI/SC", startTime: "2022", endTime: "2022" },
+                { title: f("Technical English Notions", "Noções de Inglês Técnico"), org: "SENAI/SC", startTime: "2022", endTime: "2022" },
+            ],
         },
         hobby: {
             title: f("Interests", "Interesses"),
@@ -113,13 +99,13 @@ export const content: SimpleContentType = (tl, f, lang) => {
                     role: f("Software Developer", "Desenvolvedor de Software"),
                     company: "BeeSix Soluções",
                     employmentType: "Full-time",
-                    date: "Fev 2023 - Jun 2023",
+                    date: f("Feb 2023 - Jun 2023", "Fev 2023 - Jun 2023"),
                     link: "https://www.beesix.com.br/",
                     description: tl({
                         enUs: "Providing software development services such as bug fixes, code refactoring and new feature implementation, including creation of a user account page and a module for editing and PDF generation.",
                         ptBr: "Fornecimento serviços de desenvolvimento de software, como correções de bugs, refatoração de código e implementação de novas funcionalidades, incluindo criação de uma página de conta de usuário e um módulo para edição e geração de PDF.",
                     }),
-                    skills: "JavaScript | Git | React | HTML | styled-components | Node.js | Express | ...",
+                    skills: "JavaScript · Git · React · HTML · styled-components · Node.js · Express · ...",
                 },
                 {
                     role: f("Web Developer", "Desenvolvedor Web"),
@@ -131,7 +117,7 @@ export const content: SimpleContentType = (tl, f, lang) => {
                         enUs: "Installation, maintenance, configuration and creation of websites such as landing page and/or e-commerce.",
                         ptBr: "Instalação, manutenção, configuração e criação de sites como landing page e/ou e-commerce.",
                     }),
-                    skills: "JavaScript | React | Node.js | Express | WordPress | HTML | CSS | MySQL | Vite | ...",
+                    skills: "JavaScript · React · Node.js · Express · WordPress · HTML · CSS · MySQL · Vite · ...",
                 },
                 {
                     role: f("Software Developer", "Desenvolvedor de Software"),
@@ -143,7 +129,7 @@ export const content: SimpleContentType = (tl, f, lang) => {
                         enUs: "Engineering experimental software to help other software developers, both systems and applications.",
                         ptBr: "Desenvolvendo ideias, experimentos e possíveis soluções no desenvolvimento de software, incluindo bibliotecas, utilitários e muito mais.",
                     }),
-                    skills: "Node.js | JavaScript | Git | HTML | CSS | ...",
+                    skills: "Node.js · JavaScript · Git · HTML · CSS · ...",
                 },
                 {
                     role: f("Software Developer", "Desenvolvedor de Software"),
@@ -155,7 +141,7 @@ export const content: SimpleContentType = (tl, f, lang) => {
                         enUs: "Development of personal projects, such as website, curriculum generator, portfolio, and more.",
                         ptBr: "Desenvolvimento de projetos pessoais, como site, gerador de currículo, portfólio, entre outros.",
                     }),
-                    skills: "JavaScript | Vue | React | Bootstrap | Nest.js | Git | ...",
+                    skills: "JavaScript · Vue · React · Bootstrap · Nest.js · Git · ...",
                 },
             ],
         },

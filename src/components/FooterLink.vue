@@ -30,12 +30,13 @@ const link = computed<any>(() => {
         value: protocol === "tel:" ? formatPhone(value) : value,
     };
 });
+const linkId = `footer-link-${btoa(props.label)}`;
 </script>
 
 <template>
     <div :class="classes.link">
-        <div :class="classes.link__label">{{ props.label }}</div>
-        <a v-bind="link.attrs">{{ link.value }}</a>
+        <label :class="classes.link__label" :for="linkId">{{ props.label }}</label>
+        <a v-bind="link.attrs" :id="linkId">{{ link.value }}</a>
     </div>
 </template>
 

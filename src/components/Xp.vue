@@ -1,21 +1,30 @@
 <script setup lang="ts">
+import { useCssModule } from "vue";
 import { useContent } from "../composables/useContent";
 import XpItem from "./XpItem.vue";
 
+const classes = useCssModule();
 const content = useContent(s => s.body?.experience);
 </script>
 
 <template>
-    <div class="section section--main">
+    <section class="section section--main">
         <h2 class="section__title">{{ content.title }}</h2>
-        <div class="xp-items">
-            <XpItem v-bind="item" v-for="item in content.items" />
-        </div>
-    </div>
+        <ul :class="classes.xpItems">
+            <li v-for="item in content.items">
+                <XpItem v-bind="item" />
+            </li>
+        </ul>
+    </section>
 </template>
 
 <style module lang="stylus">
-div {
-    
+.xpItems {
+    display: flex;
+    flex-direction: column;
+    gap: 4pt;
+    padding: 0;
+    margin: 0;
+    list-style: none;
 }
 </style>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { watch } from "vue";
+import { useCssModule, watch } from "vue";
 import About from "../components/About.vue";
 import Details from "../components/Details.vue";
 import Edu from "../components/Edu.vue";
@@ -10,6 +10,7 @@ import Skills from "../components/Skills.vue";
 import Xp from "../components/Xp.vue";
 import { useContent } from "../composables/useContent";
 
+const classes = useCssModule();
 const content = useContent();
 
 watch(content, () => {
@@ -18,21 +19,34 @@ watch(content, () => {
 </script>
 
 <template>
-    <div class="body">
-        <div class="body__sidebar">
+    <div :class="classes.container">
+        <aside :class="classes.sidebar">
             <Header />
             <About />
             <Details />
             <Skills />
             <Hobby />
-        </div>
-        <div class="body__main">
+        </aside>
+        <main :class="classes.main">
             <Xp />
             <Edu />
-        </div>
+        </main>
     </div>
-
-    <div class="footer">
-        <Footer />
-    </div>
+    <Footer />
 </template>
+
+<style module lang="stylus">
+.container {
+    display: flex;
+}
+
+.sidebar {
+    width: 35%;
+    padding-right: 8px;
+}
+
+.main {
+    width: 65%;
+    padding-left: 8px;
+}
+</style>
