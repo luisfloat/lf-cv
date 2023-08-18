@@ -1,1 +1,0 @@
-export const f = (tl: any, enUs: any, ptBr: any) => tl({enUs, ptBr});

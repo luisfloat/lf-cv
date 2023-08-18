@@ -1,9 +1,9 @@
-import vue from "@vitejs/plugin-vue";
-import vueJsx from "@vitejs/plugin-vue-jsx";
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
-export default {
-    root: "src/",
-    publicDir: "assets/",
+export default defineConfig({
+    //root: "src/",
+    //publicDir: "assets/",
     css: {
         preprocessorOptions: {
             stylus: {
@@ -16,7 +16,6 @@ export default {
         emptyOutDir: true,
     },
     plugins: [
-        vue(),
-        vueJsx(),
+        react(),
     ],
-};
+});

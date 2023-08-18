@@ -1,0 +1,54 @@
+.print {
+    margin-right: 8px;
+
+    padding: 4px 8px;
+    background: color-azure-4;
+    color: color-white;
+    transition: background .25s ease-out,color .25s ease-out;
+    border: 1px solid color-azure-4;
+    border-radius: 4px;
+
+    &:hover {
+        cursor: pointer;
+        background: color-azure-3;
+    }
+
+    &:focus {
+        outline: 4px solid alpha(color-azure-4, 0.1);
+    }
+
+    &:active {
+        outline: none;
+    }
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-top: 8px;
+    margin-left: 8px;
+    color: color-white;
+
+    @media print {
+        display: none;
+    }
+
+    &__link {
+        color: color-azure-5;
+        padding: 4px 8px;
+        font-size: 14px;
+
+        &:hover {
+            color: color-azure-4;  
+        }
+
+        &--active {
+            color: color-gray-5;
+
+            &:hover {
+                color: color-gray-4;  
+            }    
+        }
+    }
+}

@@ -1,0 +1,54 @@
+.links {
+    width: 100%;
+    z-index: 1;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.logo {
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    &__image {
+        width: 1.38cm;
+        height: 1.38cm;
+    }
+}
+
+.generation {
+    display: none;
+    position: absolute;
+    
+    @media print {
+        display: block;
+    }
+
+    &__text::after {
+        position: relative;
+        content: attr(data-content);
+        width: 100%;
+        height: 100%;
+        z-index: 200;
+        bottom: -60px;
+        left: 0;
+        font-size: 9pt;
+        color: color-gray-6;
+    }
+}
+
+.link {
+    display: flex;
+
+    &__label {
+        width: 60pt;
+        font-weight: 400;
+        color: color-gray-4;
+        font-size: 9pt;
+    }
+
+    &__a {
+        font-size: 9pt;
+    }    
+}
