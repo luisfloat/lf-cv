@@ -1,4 +1,6 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 import Details from "../components/Details/Details";
 import Education from "../components/Education/Education";
 import Experience from "../components/Experience/Experience";
@@ -6,20 +8,20 @@ import Header from "../components/Header/Header";
 import Interests from "../components/Interests/Interests";
 import Organizations from "../components/Organizations/Organizations";
 import Skills from "../components/Skills/Skills";
-import { langsAvailable, useContent } from "../content";
+import { availableLocales, useContent } from "../hooks/useContent";
+import { useLocale } from "../hooks/useLocale";
 import Layout from "../layouts/PageLayout/PageLayout";
-import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom";
 
 const Curriculum: React.FC = () => {
     const { locale, content } = useContent();
-
-    const handlePrint = () => {
-        window.print();
-    }
+    const { setLocale } = useLocale();
 
     if (!content) {
         return <>No content for {locale}</>
+    }
+
+    const handlePrint = () => {
+        window.print();
     }
 
     return (
@@ -50,13 +52,14 @@ const Curriculum: React.FC = () => {
                 <button className="print" onClick={handlePrint}>
                     {content.body.nav.print}
                 </button>
-                {langsAvailable.map((lang, i) => (
+                {availableLocales.map((availableLocale, i) => (
                     <Link
                         key={i}
-                        to={`/${lang}`}
-                        className={`nav__link ${lang === locale ? 'nav__link--active' : ''}`}
+                        to={`/${availableLocale}`}
+                        className={`nav__link ${locale === availableLocale ? 'nav__link--active' : ''}`}
+                        onClick={() => setLocale(availableLocale)}
                     >
-                        {lang}
+                        {availableLocale}
                     </Link>
                 ))}
             </div >

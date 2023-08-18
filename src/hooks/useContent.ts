@@ -1,9 +1,10 @@
 import { formatPhone } from "../utils/format";
 import { useParams } from "react-router-dom";
 
-export const langsAvailable = ["en-us", "pt-br"] as const;
+export const availableLocales = ["en-us", "pt-br"] as const;
+export const defaultLocale: ILocale = "en-us";
 
-export type ILocale = typeof langsAvailable[number];
+export type ILocale = typeof availableLocales[number];
 
 export const useContent = () => {
     const { locale } = useParams();
@@ -18,7 +19,7 @@ export const useContent = () => {
         return tl({ enUs, ptBr });
     }
 
-    if(!langsAvailable.includes(locale as ILocale)) {
+    if(!availableLocales.includes(locale as ILocale)) {
         return { content: null , locale };
     }
 
