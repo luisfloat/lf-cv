@@ -1,6 +1,4 @@
-# lf-cv
-
-It's the curriculum generator for my personal curricula.
+# Curriculum
 
 ## Features
 
@@ -10,20 +8,18 @@ It's the curriculum generator for my personal curricula.
 
 ## Technologies
 
-* **JavaScript** for task scripts;
-* **TS(X)** for configuring content and UI scripts;
-* **Vue3** as web UI framework;
-* **Vue Router** for SPA routing;
+* **TypeScript** as programming language;
+* **React** as UI library;
+* **React Router** for routing;
 * **Stylus** as CSS preprocessor;
 * **Vite** for dev server, building and previewing;
-* **Grunt** as task runner;
 * **Puppeteer** for PDF printing.
 
 ## Installation
 
 ```bash
-git clone https://github.com/luisfloat/cv.git &&
-cd cv/ &&
+git clone https://github.com/luisfloat/curriculum.git
+cd curriculum/
 npm install
 ```
 
@@ -31,10 +27,10 @@ npm install
 
 Name | Script | Description
 -----|---------|-----------------
-`main:dev` | ```npm run main:dev``` | Enable source code watch and live-reload
-`main:build` | ```npm run main:build``` | Build website into `dist/web/`
-`main:clean` | ```npm run main:clean``` | Delete `dist/`
-`main:print:pdf` | ```npm run main:print:pdf``` | Build website and print PDFs to `dist/print/`
+`dev` | ```npm run dev``` | Enable source code watch and live-reload
+`build` | ```npm run build``` | Build website into `dist/web/`
+`clean` | ```npm run clean``` | Delete `dist/`
+`print` | ```npm run print``` | Build website and print PDFs to `dist/print/`
 
 ## Author
 
