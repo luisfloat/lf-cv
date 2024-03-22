@@ -1,0 +1,31 @@
+---
+interface Props {
+  items: string[];
+  separator?: string;
+  type?: "primary" | "normal";
+}
+
+const { items, type = "normal", separator = "·" } = Astro.props;
+---
+
+<ul class="flex flex-wrap items-center w-full">
+  {
+    items.map((item, i) => (
+      <li class="flex items-center">
+        <span
+          class:list={[
+            "text-[9pt]",
+            { "text-azure-4": type === "primary" },
+            type === "primary" ? "" : "text-gray-cool-3",
+          ]}
+        >
+          {item}
+        </span>
+
+        {i !== items.length - 1 && (
+          <span class="text-gray-cool-5 mx-[2pt]">{separator}</span>
+        )}
+      </li>
+    ))
+  }
+</ul>

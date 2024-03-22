@@ -1,37 +1,38 @@
 # Curriculum
 
-## Features
+I have developed this project to create my curriculum using web technologies. Although it is currently simple, I plan to add more features in the future.
 
-* 🌎 **International** - Support multiple languages, currently English and Brazilian Portuguese;
-* 🌐 **Webpage support** - Generate HTML and assets for browser view;
-* 🔄 **Live-reload** - Automatically refresh web browser view on changes.
+## Development Setup
 
-## Technologies
+## Requirements
 
-* **TypeScript** as programming language;
-* **React** as UI library;
-* **React Router** for routing;
-* **Stylus** as CSS preprocessor;
-* **Vite** for dev server, building and previewing;
-* **Puppeteer** for PDF printing.
+- Node.js version 21.5.0 or higher.
+- NPM version 10.2.4 or higher.
 
-## Installation
+### Installation
 
 ```bash
-git clone https://github.com/luisfloat/curriculum.git
+git clone https://github.com/luisfuturist/curriculum.git
 cd curriculum/
-npm install
+pnpm install
 ```
 
-## Usage
+### Scripts
 
-Name | Script | Description
------|---------|-----------------
-`dev` | ```npm run dev``` | Enable source code watch and live-reload
-`build` | ```npm run build``` | Build website into `dist/web/`
-`clean` | ```npm run clean``` | Delete `dist/`
-`print` | ```npm run print``` | Build website and print PDFs to `dist/print/`
+All commands are run from the root of the project, from a terminal:
 
-## Author
+| Command          | Action                                               |
+| :--------------- | :--------------------------------------------------- |
+| `pnpm install`   | Installs dependencies                                |
+| `pnpm dev`       | Starts local development server at `localhost:4321`  |
+| `pnpm build`     | Builds the production site to `./dist/`              |
+| `pnpm preview`   | Previews the build locally before deploying          |
 
-<a href="https://twitter.com/luisfloat"><img src="https://img.shields.io/badge/-Twitter-333333?style=flat-square&amp;logo=twitter" alt="Twitter"/></a> <a href="https://github.com/luisfloat"><img src="https://img.shields.io/badge/-GitHub-333333?style=flat-square&amp;logo=github" alt="GitHub"/></a> <a href="https://instagram.com/luisfloat"><img src="https://img.shields.io/badge/-Instagram-333333?style=flat-square&amp;logo=instagram" alt="Instagram"/></a> <a href="mailto:contact@luisfloat.com"><img src="https://img.shields.io/badge/-Gmail-333333?style=flat-square&amp;logo=gmail" alt="Gmail"/></a>
+## Technology Stack
+
+- **Frontend**:
+  - **Astro**: Next-generation web framework for fast and efficient websites.
+  - **Tailwind CSS**: Utility-first CSS framework for responsive UI.
+  - **Psitta**: Next-gen type-safe internationalition web framework.
+- **Development Tools**:
+  - **TypeScript**: Superset of JavaScript for static typing.
