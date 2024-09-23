@@ -1,0 +1,68 @@
+---
+role: Analista de Suporte Técnico
+keywords: ["programming", "software development"]
+---
+
+import { t } from "../../../lib/i18n.ts";
+import List from "../../../components/List.astro";
+import PageBreak from "../../../components/PageBreak.astro";
+import ProjectList from "../../../components/ProjectList.astro";
+import Project from "../../../components/Project.astro";
+import { experience, projects, courses, certificates, academicBackground, organizations } from "./data.ts";
+
+## Resumo
+
+Sou um profissional polivalente, atuando como Desenvolvedor Full Stack e Professor de Inglês, com ampla experiência em tecnologias modernas como Git, Node.js, React, Docker, PostgreSQL, Gemini e TypeScript. Atualmente, curso Inteligência Artificial na FIAP, complementando meu aprendizado autodidata em desenvolvimento de software e expandindo minha expertise técnica. Impulsionado pela inovação, sou apaixonado por tecnologia, filosofia, arte e ficção científica, especialmente dentro do contexto do futurismo e cyberpunk, sempre em busca de novas formas de explorar e criar.
+
+## Experiência Profissional Selecionada
+
+<ProjectList items={experience} />
+
+## Formação Acadêmica
+
+<ProjectList items={academicBackground} />
+
+## Principais Habilidades
+
+<div class="space-y-2">
+  <List
+    items={"JavaScript, React, React Hooks, Vue, Nuxt, HTTP, TypeScript, HTML, CSS, Bootstrap, Vite, Sass, Tailwind, Git, GitHub, Node.js, Express, Java, Cloudflare, MySQL, PostgreSQL, Docker, ChatGPT, Gemini"}
+  />
+  <List
+    type="primary"
+    items={t("Programming Logic, Agile Methodologies, Responsive Design, API Consumption, Cloud, Deployment, Release")}
+  />
+</div>
+
+<PageBreak />
+
+## Cursos
+
+<ProjectList items={courses} />
+
+## Certificações
+
+<ProjectList items={certificates} />
+
+## Projetos Selecionados
+
+<ProjectList items={projects} />
+
+<PageBreak />
+
+## Linguagens
+
+<dl class="leading-3 text-[9pt]">
+  <div class="flex items-center gap-1">
+    <dt class="text-azure-4 font-bold">Inglês:</dt>
+    <dd class="text-gray-cool-3">Proficiência profissional completa</dd>
+  </div>
+  <div class="flex items-center gap-1">
+    <dt class="text-azure-4 font-bold">Português:</dt>
+    <dd class="text-gray-cool-3">Nativo</dd>
+  </div>
+</dl>
+
+## Organizações
+
+<ProjectList items={organizations} />

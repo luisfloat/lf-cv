@@ -1,22 +1,31 @@
 ---
-import A from "../components/A.astro";
-import List from "../components/List.astro";
-import Project from "../components/Project.astro";
-import Document from "../layouts/Document.astro";
-import { t } from "../lib/i18n";
+import A from "../../components/A.astro";
+import List from "../../components/List.astro";
+import Project from "../../components/Project.astro";
+import Document from "../../layouts/Document.astro";
+import { t } from "../../lib/i18n.ts";
 import {
   getContact,
   getCourses,
   getOrganizations,
   getExperience,
   getProjects,
-} from "../data.ts";
+} from "../../data.ts";
 
 const contact = getContact();
 const courses = getCourses();
 const organizations = getOrganizations();
 const experience = getExperience();
-const projects = getProjects();
+const projects = [
+  {
+    title: "Lusci - Bot musical com IA para Discord",
+    role: t("Software Developer"),
+    dateRange: t("Apr 2024 - Present"),
+    text: "Bot de Discord para reprodução de música com comandos em linguagem natural.",
+    skills: "Java, Gemini, Git, GitHub, Gradle, Docker, ...".split(", "),
+    link: "https://github.com/neogaialab/lusci",
+  },
+];
 
 const date = new Date().toLocaleString(Astro.currentLocale, {
   dateStyle: "medium",
@@ -28,7 +37,7 @@ const date = new Date().toLocaleString(Astro.currentLocale, {
   description={t("Luis Emidio's curriculum")}
   keywords={t("Luis Emidio, curriculum, cv")}
 >
-  <div class="grid-container page-container">
+  <div class="page-container">
     <header>
       <h1 class="text-3xl text-azure-5 font-medium">{t("Luis Emidio")}</h1>
 
@@ -45,10 +54,7 @@ const date = new Date().toLocaleString(Astro.currentLocale, {
 
         <ul>
           <li class="text-gray-cool-3 text-[9pt]">
-            {t("Santa Catarina, Brazil")}
-          </li>
-          <li class="text-gray-cool-3 text-[9pt]">
-            {t("Luis Fillipe Emidio")}
+            Itajaí, SC
           </li>
           {
             contact.map((item) => (
@@ -69,7 +75,7 @@ const date = new Date().toLocaleString(Astro.currentLocale, {
 
         <div class="space-y-2">
           <List
-            items={"JavaScript, React, React Hooks, Vue, Nuxt, HTTP, TypeScript, HTML, CSS, Bootstrap, Vite, Sass, Tailwind, Git, GitHub, Node.js, Express, Cloudflare, ChatGPT, Gemini".split(
+            items={"JavaScript, React, React Hooks, Vue, Nuxt, HTTP, TypeScript, HTML, CSS, Bootstrap, Vite, Sass, Tailwind, Git, GitHub, Node.js, Express, Java, Cloudflare, ChatGPT, Gemini".split(
               ", ",
             )}
           />
@@ -80,7 +86,9 @@ const date = new Date().toLocaleString(Astro.currentLocale, {
             ).split(", ")}
           />
           <List
-            items={t("Fast Learning, Creativity, Innovation, Curiosity").split(", ")}
+            items={t("Fast Learning, Creativity, Innovation, Curiosity").split(
+              ", ",
+            )}
           />
           <List
             type="primary"
@@ -98,7 +106,7 @@ const date = new Date().toLocaleString(Astro.currentLocale, {
 
         <List
           items={t(
-            "Philosophy, Science Fiction, Linguistics, Game Development",
+            "Technology, Philosophy, Science Fiction, Linguistics, Game Development",
           ).split(", ")}
         />
       </section>
@@ -141,15 +149,17 @@ const date = new Date().toLocaleString(Astro.currentLocale, {
 
       <section class="mt-2">
         <h2 class="text-gray-cool-4 text-[14pt] font-medium mb-2">
-          {t("Education")}
+          Educação e Certificados
         </h2>
 
         <ul class="print:text-[9pt]">
           {
             courses.map((course) => (
-              <li class="flex items-center gap-1 text-gray-cool-3">
-                <span class="font-medium text-gray-cool-4">{course.title}</span>
-                ·<span>{course.org}</span>
+              <li class="flex items-center justify-between gap-1 text-gray-cool-3">
+                <div class="flex items-center gap-1">
+                  <span class="text-gray-cool-3">{course.org}</span>·
+                  <span class="text-azure-4">{course.title}</span>
+                </div>
                 <div>
                   ({course.startTime} - {course.endTime})
                 </div>
@@ -161,7 +171,7 @@ const date = new Date().toLocaleString(Astro.currentLocale, {
 
       <section class="mt-2">
         <h2 class="text-gray-cool-4 text-[14pt] font-medium mb-2">
-          {t("Projects")}
+          Projeto Selecionado
         </h2>
 
         <div class="space-y-4">
@@ -199,14 +209,6 @@ const date = new Date().toLocaleString(Astro.currentLocale, {
       </div>
     </footer>
   </div>
-
-  <button
-    class="print:hidden fixed bottom-4 left-4 border border-azure-5 rounded-full px-4"
-    onclick="window.print()"
-    type="button"
-  >
-    {t("Print")}
-  </button>
 </Document>
 
 <style>

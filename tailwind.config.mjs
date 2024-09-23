@@ -1,4 +1,5 @@
 import lfdsTokens from 'lfds-tokens'
+import twType from '@tailwindcss/typography'
 const { color } = lfdsTokens
 
 /** @type {import('tailwindcss').Config} */
@@ -9,5 +10,7 @@ export default {
 			colors: color,
 		},
 	},
-	plugins: [],
+	plugins: [
+		twType,
+	],
 }

@@ -2,6 +2,12 @@
 
 I have developed this project to create my curriculum using web technologies. Although it is currently simple, I plan to add more features in the future.
 
+## Features
+
+* 🌎 **International** - Support multiple languages, currently English and Brazilian Portuguese;
+* 🌐 **Webpage support** - Generate HTML and assets for browser view;
+* 🔄 **Live-reload** - Automatically refresh web browser view on changes.
+
 ## Development Setup
 
 ## Requirements

@@ -1,0 +1,22 @@
+.prose-cv h2 {
+  @apply text-gray-cool-4 text-[14pt] font-medium mb-2 mt-4;
+}
+
+.prose-cv p {
+  @apply text-gray-cool-3 text-[9pt];
+}
+
+body {
+  padding: 2.54cm;
+}
+
+@media print {
+  @page {
+    size: auto;
+    margin: 0;
+  }
+
+  .no-print {
+    display: none;
+  }
+}

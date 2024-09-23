@@ -1,0 +1,80 @@
+---
+import { getEntry } from "astro:content";
+import A from "../../../components/A.astro";
+import Document from "../../../layouts/Document.astro";
+import { t } from "../../../lib/i18n";
+import "./style.css";
+const params = Astro.params;
+
+const contact = [
+  {
+    title: "Email",
+    href: "mailto:luisfuturist@gmail.com",
+    label: "luisfuturist@gmail.com",
+  },
+  {
+    title: "Website",
+    href: "https://luisfuturist.com",
+    label: "luisfuturist.com",
+  },
+  {
+    title: t("Phone"),
+    href: "tel:5547999216685",
+    label: "47 99921-6685",
+  },
+  {
+    title: "GitHub",
+    href: "https://github.com/luisfuturist/",
+    label: "github.com/luisfuturist",
+  },
+  {
+    title: "LinkedIn",
+    href: "https://linkedin.com/in/luisfuturist/",
+    label: "linkedin.com/in/luisfuturist",
+  },
+];
+
+const entry = await getEntry("cv", "pt-br/totvs-technical-support");
+const { Content } = await entry.render();
+
+const date = new Date().toLocaleString(Astro.currentLocale, {
+  dateStyle: "short",
+});
+
+const title = `Luis Emidio CV ${date} (${params.locale})`;
+---
+
+<Document
+  title={title}
+  description="Luis Emidio's curriculum"
+  keywords={entry.data.keywords?.join(", ")}
+>
+  <header>
+    <h1 class="text-3xl text-azure-5 font-medium">Luis Emidio</h1>
+    <p class="text-[9pt] text-gray-cool-3 font-medium">{entry.data.role}</p>
+
+    <dl class="grid gap-0 grid-cols-2 mt-2 pb-1 leading-3 text-[9pt]">
+      <div class="flex items-center gap-1">
+        <dt class="text-gray-cool-2">Endereço:</dt>
+        <dd class="text-gray-cool-3">Itajaí, SC</dd>
+      </div>
+
+      {
+        contact.map((item) => (
+          <div class="flex items-center gap-1">
+            <dt class="text-gray-cool-2">{item.title}: </dt>
+            <dd class="text-gray-cool-3">
+              <A href={item.href}>
+                {item.label}
+              </A>
+            </dd>
+          </div>
+        ))
+      }
+    </dl>
+  </header>
+
+  <article class="prose-cv">
+    <Content />
+  </article>
+</Document>

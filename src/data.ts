@@ -13,6 +13,11 @@ export function getContact() {
       label: "luisfuturist@gmail.com",
     },
     {
+      title: "Website",
+      href: "https://luisfuturist.com",
+      label: "luisfuturist.com",
+    },
+    {
       title: "GitHub",
       href: "https://github.com/luisfuturist/",
       label: "github.com/luisfuturist",
@@ -27,6 +32,12 @@ export function getContact() {
 
 export function getCourses() {
   return [
+    {
+      title: t("Technology of Artificial Intelligence"),
+      org: "FIAP",
+      startTime: "2024",
+      endTime: "2026",
+    },
     {
       title: t("Programming Logic with JavaScript"),
       org: "SENAI/SC",
@@ -92,7 +103,7 @@ export function getExperience() {
         "An intuitive website to promote my online English teaching for adults, incorporating key features such as pricing details, contact information and more.",
       ),
       skills:
-        "(P)react, Astro, Vite, HTML, TailwindCSS, Git, CF Pages, SSR, ...".split(", "),
+        "P-react, Astro, Vite, HTML, TailwindCSS, Git, CF Pages, SSR, ...".split(", "),
     },
     {
       title: "Maskavo",
@@ -119,15 +130,15 @@ export function getExperience() {
 export function getProjects() {
   return [
     {
-      title: t("Psitta - Internationalization library"),
+      title: t("Strigi - CLI command assistant powered by GenAI"),
       role: t("Software Developer"),
-      dateRange: t("Jan 2024 - Present"),
+      dateRange: t("Apr 2024 - Present"),
       text: t(
-        "Web internationalization framework, including mainly date and number formatting, locale detection and translation.",
+        "An experimental CLI tool leveraging GenAI to generate and explain commands based on natural language prompts.",
       ),
       skills:
-        "TypeScript, Vue, React, Git, Vite, Intl APIs, ...".split(", "),
-      link: "https://github.com/neogaialab/psitta",
+        "TypeScript, Bun, Node.js, Gemini, Git, ...".split(", "),
+      link: "https://neogaialab.github.io/strigi/overview/introduction.html",
     },
   ];
 }

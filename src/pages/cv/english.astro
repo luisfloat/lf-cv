@@ -1,0 +1,242 @@
+---
+import A from "../../components/A.astro";
+import List from "../../components/List.astro";
+import Project from "../../components/Project.astro";
+import Document from "../../layouts/Document.astro";
+import { t } from "../../lib/i18n.ts";
+
+const certificates = [
+  {
+    title: "Noções de Inglês Técnico",
+    role: "SENAI/SC",
+    link: "https://ecommerce.sesisenai.org.br/documentos/validar/DEESS38VTQ",
+    dateRange: "2022 - 2022",
+  },
+  {
+    title: "Certificate - Upper Intermediate - CEFR Level B2+",
+    role: "EF SET",
+    link: "https://cert.efset.org/ES2ZUq",
+    dateRange: "Nov 2023",
+  },
+  {
+    title: "Ensino Médio Completo",
+    role: "Elfrida Cristino da Silva",
+    dateRange: "2022 - 2022",
+  },
+];
+const experience = [
+  {
+    title: "With",
+    link: "https://with.luisfuturist.com",
+    role: "Aulas particulares de Inglês",
+    dateRange: t("Sep 2023 - Present"),
+    items: [
+      'Elaboração de apresentações',
+      'Ensino individualizado',
+      'Desenvolvimento de tarefas para casa',
+      'Correção e feedback de tarefas para casa',
+      'Criação de website e posts para divulgação',
+    ],
+  },
+];
+const projects = [
+    {
+      title: "Maratongue",
+      role: t("Software Developer"),
+      dateRange: "Jan 2024 - Presente",
+      text: "Maratongue é um aplicativo em desenvolvimento de aprendizado de inglês impulsionado por Inteligência Artificial que oferece experiências interativas, incluindo lições, exercícios ajustados ao nível de proficiência do usuário, rastreamento de progresso com feedback e gamificação para incentivar a prática regular.",
+      link: "https://neogaialab.github.io/strigi/overview/introduction.html",
+    },
+  ];;
+
+const date = new Date().toLocaleString(Astro.currentLocale, {
+  dateStyle: "medium",
+});
+
+const contact = [
+  {
+    title: t("Phone"),
+    href: "tel:5547999216685",
+    label: "47 99921-6685",
+  },
+  {
+    title: "Email",
+    href: "mailto:luisfuturist@gmail.com",
+    label: "luisfuturist@gmail.com",
+  },
+  {
+    title: "Duolingo",
+    href: "https://www.duolingo.com/profile/luisfuturist",
+    label: "duolingo.com/profile/luisfuturist",
+  },
+];
+---
+
+<Document
+  title={t("Luis Emidio - CV")}
+  description={t("Luis Emidio's curriculum")}
+  keywords={t("Luis Emidio, curriculum, cv")}
+>
+  <div class="grid-container page-container">
+    <header>
+      <h1 class="text-3xl text-azure-5 font-medium">Luis Emidio</h1>
+
+      <p class="text-[9pt] text-gray-cool-3 font-medium">
+        Professor/Instrutor de Inglês
+      </p>
+    </header>
+
+    <aside class="space-y-4">
+      <section class="mt-4">
+        <h2 class="text-gray-cool-4 text-[14pt] font-medium mb-2">
+          {t("Personal Data")}
+        </h2>
+
+        <ul>
+          <li class="text-gray-cool-3 text-[9pt]">
+            {t("Santa Catarina, Brazil")}
+          </li>
+          <li class="text-gray-cool-3 text-[9pt]">
+            Luis Fillipe Emidio
+          </li>
+          {
+            contact.map((item) => (
+              <li class="leading-3">
+                <A class="text-[9pt]" href={item.href}>
+                  {item.label}
+                </A>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+
+      <section class="mt-2">
+        <h2 class="text-gray-cool-4 text-[14pt] font-medium mb-2">
+          {t("Skills")}
+        </h2>
+
+        <div class="space-y-2">
+          <List
+            items={"Aprendizagem rápida, Criatividade, Curiosidade, Organização".split(", ")}
+          />
+          <List
+            items={"Informática, Google Workspace (Docs, Sheets, Meet, Todos, Keep), Programação".split(
+              ", ",
+            )}
+          />
+          <List
+            type="primary"
+            items={t("Intermediate English, Native Portuguese").split(", ")}
+          />
+        </div>
+      </section>
+
+      <hr class="border-b-2 border-gray-cool-9" />
+
+      <section class="mt-2">
+        <h2 class="text-gray-cool-4 text-[14pt] font-medium mb-2">
+          Interesses e Paixões
+        </h2>
+
+        <List
+          items={"Linguística, Conlanging, Filosofia, Tecnologia, Desenvolvimento de Jogos, Ficção Científica".split(", ")}
+        />
+      </section>
+    </aside>
+
+    <main class="space-y-4">
+      <section>
+        <h2 class="text-gray-cool-4 text-[14pt] font-medium mb-2">
+          Sobre Mim
+        </h2>
+
+        <p class="text-gray-cool-3 text-[9pt]">
+          Sou um profissional dedicado, apaixonado por aprender e ensinar. Como autodidata, pratico inglês diariamente e estou sempre aprimorando minhas habilidades para proporcionar uma experiência de aprendizado cada vez melhor.
+        </p>
+      </section>
+
+      <section class="mt-2">
+        <h2 class="text-gray-cool-4 text-[14pt] font-medium mb-2">
+          Experiência Relevante
+        </h2>
+
+        <div class="space-y-4">
+          {experience.map((xp) => <Project {...xp} />)}
+        </div>
+      </section>
+
+      <section class="mt-2">
+        <h2 class="text-gray-cool-4 text-[14pt] font-medium mb-2">
+          Educação e Certificados
+        </h2>
+
+        <ul class="print:text-[9pt]">
+          {certificates.map((c) => <Project {...c} />)}
+        </ul>
+      </section>
+
+      <section class="mt-2">
+        <h2 class="text-gray-cool-4 text-[14pt] font-medium mb-2">
+          Projetos Selecionados
+        </h2>
+
+        <div class="space-y-4">
+          {projects.map((p) => <Project {...p} />)}
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="px-[2.54cm] pb-[2.54cm] fixed left-0 bottom-0 w-full flex justify-start items-center bg-white"
+    >
+      <div
+        class="border-t-2 border-gray-cool-6 w-full pt-4 flex justify-between items-end"
+      >
+        <dl>
+          {
+            contact.map((item) => (
+              <div class="flex items-center gap-4">
+                <dt class="text-gray-cool-3 text-[9pt]" style="width: 40px">
+                  {item.title}
+                </dt>
+                <dd class="">
+                  <A href={item.href} class="text-[9pt] flex items-center">
+                    {item.label}
+                  </A>
+                </dd>
+              </div>
+            ))
+          }
+        </dl>
+
+        <small class="text-gray-cool-3"
+          >{t("Generated at {date}", { date })}</small
+        >
+      </div>
+    </footer>
+  </div>
+</Document>
+
+<style>
+  .grid-container {
+    @apply grid gap-x-4;
+    grid-template-areas:
+      "header main"
+      "aside main";
+    grid-template-columns: 2fr 4fr;
+    grid-template-rows: auto auto;
+  }
+
+  header {
+    grid-area: header;
+  }
+
+  main {
+    grid-area: main;
+  }
+
+  aside {
+    grid-area: aside;
+  }
+</style>

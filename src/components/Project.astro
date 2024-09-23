@@ -1,16 +1,10 @@
 ---
 import List from "../components/List.astro";
+import type { ProjectItem } from "../types";
 
-interface Props {
-	title: string;
-	role: string;
-	link: string;
-	dateRange: string;
-	skills: string[];
-	text: string;
-}
+interface Props extends ProjectItem {}
 
-const { title, role, text, link, dateRange, skills } = Astro.props;
+const { title, role, text, link, dateRange, skills, items } = Astro.props;
 ---
 
 <article>
@@ -23,13 +17,21 @@ const { title, role, text, link, dateRange, skills } = Astro.props;
 		</header>
 
 		<main class="mb-2">
-			<p class="text-gray-cool-2 text-[9pt]">
+			{text && <p class="text-gray-cool-2 text-[9pt] whitespace-pre-line">
 				{text}
-			</p>
+			</p>}
+
+			{items && <ul class="list-disc pl-2 ml-2 text-[9pt]">
+				{items.map((item) => (
+					<li class="text-gray-cool-2">{item}</li>
+				))}
+			</ul>}
 		</main>
 	</a>
 
-	<footer>
-		<List items={skills} />
-	</footer>
+	{ skills && (
+		<footer>
+			<List items={skills} />
+		</footer>
+	)}
 </article>

@@ -1,16 +1,18 @@
 ---
 interface Props {
-  items: string[];
+  items: string[] | string;
   separator?: string;
   type?: "primary" | "normal";
 }
 
 const { items, type = "normal", separator = "·" } = Astro.props;
+
+const parsedItems = typeof items === "string" ? items.split(", ") : items;
 ---
 
 <ul class="flex flex-wrap items-center w-full">
   {
-    items.map((item, i) => (
+    parsedItems.map((item, i) => (
       <li class="flex items-center">
         <span
           class:list={[

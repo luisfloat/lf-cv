@@ -1,0 +1,14 @@
+---
+import type { ProjectItem } from '../types';
+import Project from './Project.astro';
+
+interface Props {
+  items: ProjectItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<div class="space-y-2">
+  {items.map((xp) => <Project {...xp} />)}
+</div>

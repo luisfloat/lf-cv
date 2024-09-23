@@ -8,6 +8,6 @@ interface Props extends HTMLAttributes<"a"> {
 const { class: className, ...rest } = Astro.props;
 ---
 
-<a class:list={["text-azure-4 hover:underline", className]} {...rest}>
+<a class:list={["text-azure-3 hover:underline", className]} {...rest}>
   <slot />
 </a>
