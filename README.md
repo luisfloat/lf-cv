@@ -52,7 +52,11 @@ pnpm dev
 
 Open your browser and navigate to `http://localhost:4321` to preview the documents.
 
-### Internationalization
+### Content
+
+To add or edit content, check out the *private* `content/` branch.
+
+#### Internationalization
 
 For information on how to add or update translations, check out [Psitta docs](https://9aia.github.io/psitta/).
 
