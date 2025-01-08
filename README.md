@@ -5,9 +5,9 @@ This repository contains personal and professional documents, including my CV, c
 ## Features
 
 * 🌎 **International** - Support multiple languages, currently English and Brazilian Portuguese;
-* 🌐 **Webpage support** - Generate HTML and assets for browser view;
+* 🌐 **Dynamic Markdown Support** - Allows content to be easily updated and customized using Markdown syntax;
 * 🛠️ **Modular Design**: Each document is modular and reusable for various purposes.
-* 🔄 **Live-reload** - Automatically refresh web browser view on changes.
+* 🔄 **Live-Reload** - Automatically refresh web browser view on changes.
 * 🖨️ **Print-Ready**: Optimized for printing directly from the browser.
 
 ## Technology Stack
