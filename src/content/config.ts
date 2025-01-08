@@ -6,6 +6,7 @@ const cvCollection = defineCollection({
     role: z.string(),
     draft: z.boolean().default(false),
     keywords: z.array(z.string()),
+    noContact: z.array(z.string()),
   }),
 });
 

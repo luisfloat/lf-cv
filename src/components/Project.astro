@@ -10,20 +10,20 @@ const { title, role, text, link, dateRange, skills, items } = Astro.props;
 <article>
 	<a href={link} target="_blank">
 		<header>
-			<h1 class="text-[9pt] flex gap-1 items-center text-gray-cool-4">
-				<span class="text-azure-4 font-medium">{title}</span> ({dateRange})
+			<h1 class="text-[9pt] flex gap-1 items-center text-slate-600">
+				<span class="text-blue-900 font-medium">{title}</span> ({dateRange})
 			</h1>
-			<p class="mb-2 text-[9pt] text-gray-cool-3">{role}</p>
+			<p class="mb-2 text-[9pt] text-slate-700">{role}</p>
 		</header>
 
 		<main class="mb-2">
-			{text && <p class="text-gray-cool-2 text-[9pt] whitespace-pre-line">
+			{text && <p class="text-slate-800 text-[9pt] whitespace-pre-line">
 				{text}
 			</p>}
 
 			{items && <ul class="list-disc pl-2 ml-2 text-[9pt]">
 				{items.map((item) => (
-					<li class="text-gray-cool-2">{item}</li>
+					<li class="text-slate-800">{item}</li>
 				))}
 			</ul>}
 		</main>

@@ -8,9 +8,9 @@ export default {
   'Full Stack Developer': { pt: 'Desenvolvedor Fullstack' },
   'Santa Catarina, Brazil': { pt: '02, dez. 2001 - Itajaí, SC' },
   'Luis Fillipe Emidio': { pt: 'Luis Fillipe Emidio' },
-  'Luis Emidio - Coverletter': { pt: 'Luis Emidio - Carta de Apresentação' },
-  'Luis Emidio\'s coverletter': { pt: 'Carta de apresentação do Luis Emidio' },
-  'Luis Emidio, coverletter': { pt: 'Luis Emidio, carta, apresentação' },
+  'Luis Emidio - Cover Letter': { pt: 'Luis Emidio - Carta de Apresentação' },
+  'Luis Emidio\'s cover letter': { pt: 'Carta de apresentação do Luis Emidio' },
+  'Luis Emidio, cover letter': { pt: 'Luis Emidio, carta, apresentação' },
   
   'Teaching - Self-employed': { pt: 'Professor/Instrutor - Autônomo' },
 
@@ -45,6 +45,7 @@ export default {
   'Feb 2023 - Jun 2023': { pt: 'Fev 2023 - Jun 2023' },
   'Installation, maintenance, configuration and creation of the website, including landing page and e-commerce.': { pt: 'Instalação, manutenção, configuração e criação do site, incluindo landing page e e-commerce.' },
   'Sep 2023 - Present': { pt: 'Set 2023 - Presente' },
+  'Jul 2024 - Present': { pt: 'Jul 2024 - Presente' },
   'Sep 2023 - Jan 2024': { pt: 'Set 2023 - Jan 2024' },
   'Full Stack Developer & Teaching - Self-employed': { pt: 'Desenvolvedor Full Stack & Professor - Autônomo' },
   'An intuitive website to promote my online English teaching for adults, incorporating key features such as pricing details, contact information and more.': { pt: 'Um site intuitivo para divulgar meu ensino de inglês online para adultos, incorporando recursos importantes como detalhes de preços, informações de contato e muito mais.' },
@@ -56,5 +57,10 @@ export default {
   'I\'m a passionate Full Stack Web Developer with a keen interest in exploring the dynamic intersection of current and future technology. Through self-taught learning combined with practical experience, I continually improve my software development skills. My journey has been driven by an insatiable curiosity and an unwavering motivation to innovate and design solutions for the near future.': { pt: 'Sou um desenvolvedor Web Full Stack apaixonado e com grande interesse em explorar a interseção dinâmica da tecnologia atual e o futuro. Por meio do aprendizado autodidata aliado à experiência prática, aprimoro continuamente minhas habilidades em desenvolvimento de software. Minha jornada foi impulsionada por uma curiosidade insaciável e uma motivação inabalável para inovar e projetar soluções cada vez melhores.' },
 
   'Technology of Artificial Intelligence': { pt: 'Tecnológo em Inteligência Artificial' },
+
+  'An organization for experimentation in the development of projects with emerging technologies.': { pt: 'Uma organização para experimentação no desenvolvimento de projetos com tecnologias emergentes.' },
+
+  'Location': { pt: 'Endereço' },
+  'Brazil, SC (Remote)': { pt: 'Itajaí, SC - Brasil' },
 };
 

@@ -1,0 +1,42 @@
+---
+import { getCollection } from "astro:content";
+
+const allLetters = await getCollection("coverletter", ({ data }) => {
+  return data.draft !== true;
+});
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cover letter Archive</title>
+  </head>
+  <body class="bg-black p-4 w-full h-full">
+    <h1 class="text-2xl text-slate-400 mb-4">CV Archive</h1>
+    
+    <nav >
+      <ul class="flex flex-col gap-4">
+        {
+          allLetters.map((letter) => (
+            <li>
+              <a
+                href={`/coverletter/${letter.slug}`}
+                class="flex gap-2 no-underline text-slate-600"
+              >
+                {letter.data.role}{" "}
+                <span class="text-yellow-900 bg-yellow-900/30 rounded-md px-2 flex items-center text-xs">
+                  {letter.id.slice(0, 2)}
+                </span>
+                <span class="text-slate-600 bg-slate-900/30 rounded-md px-2 flex items-center text-xs">
+                  {letter.id.slice(2)}
+                </span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </body>
+</html>

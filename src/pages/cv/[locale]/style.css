@@ -1,9 +1,9 @@
 .prose-cv h2 {
-  @apply text-gray-cool-4 text-[14pt] font-medium mb-2 mt-4;
+  @apply text-slate-600 text-[14pt] italic mb-2 mt-4;
 }
 
 .prose-cv p {
-  @apply text-gray-cool-3 text-[9pt];
+  @apply text-slate-600 text-[9pt];
 }
 
 body {

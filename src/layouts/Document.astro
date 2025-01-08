@@ -37,7 +37,7 @@ const { title, description, keywords } = Astro.props;
 		<slot />
 
 		<button
-			class="print:hidden fixed bottom-4 left-4 border border-azure-5 rounded-full px-4"
+			class="print:hidden fixed bottom-4 left-4 border border-yellow-900 text-slate-950 rounded-full px-4"
 			onclick="window.scrollTo({ top: 0 }); window.print();"
 			type="button"
 		>
@@ -56,16 +56,11 @@ const { title, description, keywords } = Astro.props;
 		line-height: initial;
 	}
 
+	.prose a {
+		@apply text-sky-900;
+	}
+
 	html {
 		background: #fff;
 	}
-
-	/* body {
-		padding: 2.54cm;
-	}
-
-	@page {
-		size: A4;
-		margin: 0px;
-	} */
 </style>

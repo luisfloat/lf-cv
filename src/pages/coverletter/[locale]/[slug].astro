@@ -1,0 +1,126 @@
+---
+import A from "../../../components/A.astro";
+import { getEntry } from "astro:content";
+import { getContact } from "../../../data.ts";
+import Document from "../../../layouts/Document.astro";
+import { t } from "../../../lib/i18n.ts";
+
+const params = Astro.params;
+const entry = await getEntry("coverletter", `${params.locale}/${params.slug}`);
+
+if (!entry) {
+  throw new Response(null, { status: 404 });
+}
+
+const contact = getContact();
+
+if (!entry) {
+  throw new Response(null, { status: 404 });
+}
+
+const { Content } = await entry.render();
+
+const date = new Date().toLocaleString(Astro.currentLocale, {
+  dateStyle: "short",
+});
+
+const title = `Luis Emidio CV ${date} (${params.locale})`;
+---
+
+<Document
+  title={title}
+  description="Luis Emidio's cover letter"
+  keywords={entry.data.keywords?.join(", ")}
+>
+  <header>
+    <h1 class="text-3xl flex gap-1 mb-2 ml-[-1px]">
+      <span class="text-sky-900">Luis</span>
+      <span class="text-slate-700">Emidio</span>
+    </h1>
+
+    <p class="text-[1rem] text-slate-700 mb-6 mt-1">
+      {t("Full Stack Developer")}
+    </p>
+  </header>
+
+  <div class="grid-container">
+    <aside class="space-y-4">
+      <section>
+        <h2 class="text-slate-700 italic text-[1rem] mb-2">
+          {t("Personal Data")}
+        </h2>
+
+        <hr class="border-t-2 border-slate-300 mt-2" />
+
+        <ul class="mt-4">
+          <li class="text-slate-700 text-[1rem] leading-5">
+            {t("Luis Fillipe Emidio")}
+          </li>
+          <li class="text-slate-700 text-[1rem] leading-5">
+            {t("Santa Catarina, Brazil")}
+          </li>
+          {
+            contact.map((item) => (
+              <li class="leading-5">
+                <A class="text-[1rem]" href={item.href}>
+                  {item.label}
+                </A>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+    </aside>
+
+    <main class="space-y-4">
+      <article
+        class="w-full mt-10 text-slate-700 prose max-w-none prose-a:no-underline prose-a:font-normal"
+      >
+        <Content />
+      </article>
+    </main>
+
+    <footer
+      class="px-[2.54cm] pb-[2.54cm] fixed left-0 bottom-0 w-full flex justify-start items-center bg-white"
+    >
+      <div class="w-full pt-4 flex justify-between items-end">
+        <small class="text-yellow-900"
+          >{t("Generated at {date}", { date })}</small
+        >
+      </div>
+    </footer>
+  </div>
+</Document>
+
+<style>
+  body {
+    padding: 2.54cm;
+  }
+
+  @page {
+    size: A4;
+    margin: 0px;
+  }
+
+  .grid-container {
+    @apply grid gap-x-8;
+    grid-template-areas:
+      "header ."
+      "aside main";
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto auto;
+  }
+
+  header {
+    grid-area: header;
+    @apply pb-4;
+  }
+
+  main {
+    grid-area: main;
+  }
+
+  aside {
+    grid-area: aside;
+  }
+</style>

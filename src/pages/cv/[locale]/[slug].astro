@@ -20,7 +20,7 @@ const contact = [
   {
     title: t("Phone"),
     href: "tel:5547999216685",
-    label: "47 99921-6685",
+    label: "+55 47 99921-6685",
   },
   {
     title: "GitHub",
@@ -32,9 +32,19 @@ const contact = [
     href: "https://linkedin.com/in/luisfuturist/",
     label: "linkedin.com/in/luisfuturist",
   },
+  {
+    title: "Duolingo",
+    href: "https://www.duolingo.com/profile/luisfuturist",
+    label: "duolingo.com/profile/luisfuturist",
+  },
 ];
 
-const entry = await getEntry("cv", "pt-br/totvs-technical-support");
+const entry = await getEntry("cv", `${params.locale}/${params.slug}`);
+
+if(!entry) {
+  throw new Response(null, { status: 404 });
+}
+
 const { Content } = await entry.render();
 
 const date = new Date().toLocaleString(Astro.currentLocale, {
@@ -42,6 +52,8 @@ const date = new Date().toLocaleString(Astro.currentLocale, {
 });
 
 const title = `Luis Emidio CV ${date} (${params.locale})`;
+const location = t('Brazil, SC (Remote)');
+const noContact = entry.data.noContact || [];
 ---
 
 <Document
@@ -50,20 +62,20 @@ const title = `Luis Emidio CV ${date} (${params.locale})`;
   keywords={entry.data.keywords?.join(", ")}
 >
   <header>
-    <h1 class="text-3xl text-azure-5 font-medium">Luis Emidio</h1>
-    <p class="text-[9pt] text-gray-cool-3 font-medium">{entry.data.role}</p>
+    <h1 class="text-3xl text-blue-900">Luis Emidio</h1>
+    <p class="text-[9pt] text-slate-700">{entry.data.role}</p>
 
     <dl class="grid gap-0 grid-cols-2 mt-2 pb-1 leading-3 text-[9pt]">
       <div class="flex items-center gap-1">
-        <dt class="text-gray-cool-2">Endereço:</dt>
-        <dd class="text-gray-cool-3">Itajaí, SC</dd>
+        <dt class="text-slate-700">{t('Location')}:</dt>
+        <dd class="text-slate-800">{location}</dd>
       </div>
 
       {
-        contact.map((item) => (
+        contact.filter(i => !noContact.includes(i.title)).map((item) => (
           <div class="flex items-center gap-1">
-            <dt class="text-gray-cool-2">{item.title}: </dt>
-            <dd class="text-gray-cool-3">
+            <dt class="text-slate-700">{item.title}: </dt>
+            <dd class="text-slate-800">
               <A href={item.href}>
                 {item.label}
               </A>

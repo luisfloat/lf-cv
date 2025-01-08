@@ -80,14 +80,14 @@ export function getCourses() {
 export function getOrganizations() {
   return [
     {
-      title: "NeoGaia Lab",
+      title: "Gaia",
       role: t("Software Developer"),
       dateRange: t("Mar 2022 - Present"),
       text: t(
         "Laboratory for exploring new ideas, experiments and possible solutions in software development.",
       ),
       skills: "Node.js, JavaScript, Vue, React, TypeScript, Git, HTML, CSS, ...".split(", "),
-      link: "https://github.com/neogaialab",
+      link: "https://9aia.com",
     },
   ];
 }
@@ -138,7 +138,7 @@ export function getProjects() {
       ),
       skills:
         "TypeScript, Bun, Node.js, Gemini, Git, ...".split(", "),
-      link: "https://neogaialab.github.io/strigi/overview/introduction.html",
+      link: "https://9aia.github.io/strigi/overview/introduction.html",
     },
   ];
 }
