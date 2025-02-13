@@ -5,13 +5,11 @@ export default {
   'Intermediate English, Native Portuguese': { pt: 'Inglês Intermediário, Português Nativo' },
   'Technology, Philosophy, Science Fiction, Linguistics, Game Development': { pt: 'Tecnologia, Filosofia, Ficção Científica, Linguística, Desenvolvimento de Jogos' },
   'Luis Emidio': { pt: 'Luis Emidio' },
-  'Full Stack Developer': { pt: 'Desenvolvedor Fullstack' },
-  'Santa Catarina, Brazil': { pt: '02, dez. 2001 - Itajaí, SC' },
-  'Luis Fillipe Emidio': { pt: 'Luis Fillipe Emidio' },
   'Luis Emidio - Cover Letter': { pt: 'Luis Emidio - Carta de Apresentação' },
   'Luis Emidio\'s cover letter': { pt: 'Carta de apresentação do Luis Emidio' },
   'Luis Emidio, cover letter': { pt: 'Luis Emidio, carta, apresentação' },
   
+  'Full Stack Developer': { pt: 'Desenvolvedor Fullstack' },
   'Teaching - Self-employed': { pt: 'Professor/Instrutor - Autônomo' },
 
   'Personal Data': { pt: 'Dados Pessoais' },
@@ -50,17 +48,19 @@ export default {
   'Full Stack Developer & Teaching - Self-employed': { pt: 'Desenvolvedor Full Stack & Professor - Autônomo' },
   'An intuitive website to promote my online English teaching for adults, incorporating key features such as pricing details, contact information and more.': { pt: 'Um site intuitivo para divulgar meu ensino de inglês online para adultos, incorporando recursos importantes como detalhes de preços, informações de contato e muito mais.' },
   'Apr 2024 - Present': { pt: 'Apr 2024 - Presente' },
+
   'Projects': { pt: 'Projetos' },
   "With - Aulas de Inglês": { pt: "With - English Teaching" },
   'Strigi - CLI command assistant powered by GenAI': { pt: 'Strigi - AI Assistente de comando CLI' },
   'An experimental CLI tool leveraging GenAI to generate and explain commands based on natural language prompts.': { pt: 'Uma ferramenta CLI experimental que aproveita GenAI para gerar e explicar comandos com base em prompts de linguagem natural.' },
-  'I\'m a passionate Full Stack Web Developer with a keen interest in exploring the dynamic intersection of current and future technology. Through self-taught learning combined with practical experience, I continually improve my software development skills. My journey has been driven by an insatiable curiosity and an unwavering motivation to innovate and design solutions for the near future.': { pt: 'Sou um desenvolvedor Web Full Stack apaixonado e com grande interesse em explorar a interseção dinâmica da tecnologia atual e o futuro. Por meio do aprendizado autodidata aliado à experiência prática, aprimoro continuamente minhas habilidades em desenvolvimento de software. Minha jornada foi impulsionada por uma curiosidade insaciável e uma motivação inabalável para inovar e projetar soluções cada vez melhores.' },
 
   'Technology of Artificial Intelligence': { pt: 'Tecnológo em Inteligência Artificial' },
-
+  
   'An organization for experimentation in the development of projects with emerging technologies.': { pt: 'Uma organização para experimentação no desenvolvimento de projetos com tecnologias emergentes.' },
-
-  'Location': { pt: 'Endereço' },
-  'Brazil, SC (Remote)': { pt: 'Itajaí, SC - Brasil' },
+  'About Me': { pt: 'Sobre Mim' },
+  'I am a versatile professional, working as an English Teacher and Full Stack Developer, with extensive experience in modern technologies such as Git, Node.js, React, Docker, PostgreSQL, Gemini, Linux and TypeScript. I am currently studying Artificial Intelligence at FIAP, complementing my self-taught learning in software development and expanding my technical expertise. Driven by innovation, I am passionate about technology, philosophy, art and science fiction, especially within the context of futurism and cyberpunk, always looking for new ways to explore and create.': { pt: 'Sou um profissional polivalente, atuando como Professor de Inglês e Desenvolvedor Full Stack, com ampla experiência em tecnologias modernas como Git, Node.js, React, Docker, PostgreSQL, Gemini, Linux e TypeScript. Atualmente, curso Inteligência Artificial na FIAP, complementando meu aprendizado autodidata em desenvolvimento de software e expandindo minha expertise técnica. Impulsionado pela inovação, sou apaixonado por tecnologia, filosofia, arte e ficção científica, especialmente dentro do contexto do futurismo e cyberpunk, sempre em busca de novas formas de explorar e criar.' },
+  'Software Developer': { pt: 'Desenvolvedor de Software' },
+  'Founder | Software Developer': { pt: 'Fundador | Desenvolvedor de Software' },
+  'An organization for experimentation in the development of projects with emerging technologies.': { pt: "Uma organização para experimentação no desenvolvimento de projetos com tecnologias emergentes." }
 };
 

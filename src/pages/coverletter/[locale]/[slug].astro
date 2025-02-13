@@ -25,6 +25,9 @@ const date = new Date().toLocaleString(Astro.currentLocale, {
 });
 
 const title = `Luis Emidio CV ${date} (${params.locale})`;
+const name = entry.data.name;
+const location = entry.data.location;
+const role = entry.data.role;
 ---
 
 <Document
@@ -39,7 +42,7 @@ const title = `Luis Emidio CV ${date} (${params.locale})`;
     </h1>
 
     <p class="text-[1rem] text-slate-700 mb-6 mt-1">
-      {t("Full Stack Developer")}
+      {role}
     </p>
   </header>
 
@@ -54,10 +57,10 @@ const title = `Luis Emidio CV ${date} (${params.locale})`;
 
         <ul class="mt-4">
           <li class="text-slate-700 text-[1rem] leading-5">
-            {t("Luis Fillipe Emidio")}
+            {name}
           </li>
           <li class="text-slate-700 text-[1rem] leading-5">
-            {t("Santa Catarina, Brazil")}
+            {location}
           </li>
           {
             contact.map((item) => (

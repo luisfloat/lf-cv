@@ -51,8 +51,8 @@ const date = new Date().toLocaleString(Astro.currentLocale, {
   dateStyle: "short",
 });
 
-const title = `Luis Emidio CV ${date} (${params.locale})`;
-const location = t('Brazil, SC (Remote)');
+const title = `${params.locale?.toUpperCase()} Luis Emidio CV ${date.replaceAll("/", "_")}`;
+const location = entry.data.location;
 const noContact = entry.data.noContact || [];
 ---
 
@@ -67,14 +67,12 @@ const noContact = entry.data.noContact || [];
 
     <dl class="grid gap-0 grid-cols-2 mt-2 pb-1 leading-3 text-[9pt]">
       <div class="flex items-center gap-1">
-        <dt class="text-slate-700">{t('Location')}:</dt>
         <dd class="text-slate-800">{location}</dd>
       </div>
 
       {
         contact.filter(i => !noContact.includes(i.title)).map((item) => (
           <div class="flex items-center gap-1">
-            <dt class="text-slate-700">{item.title}: </dt>
             <dd class="text-slate-800">
               <A href={item.href}>
                 {item.label}
