@@ -34,6 +34,8 @@ This repository contains personal and professional documents, including my CV, c
    ```bash
    git clone https://github.com/luisfuturist/docs.git
    cd docs
+   git remote add content https://github.com/luisfuturist/docs-content.git
+   git pull content content
    ```
 
 2. Install dependencies:
